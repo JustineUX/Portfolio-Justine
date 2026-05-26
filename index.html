@@ -14,19 +14,28 @@
   <!-- ========== MAIN NAV ========== -->
   <nav class="main-nav" id="mainNav">
     <div class="nav-inner">
-      <ul class="nav-links">
+      <span class="nav-brand">Justine Calvao</span>
+      <ul class="nav-links" id="navLinksList">
         <li><a href="#accueil" class="nav-link active" data-section="accueil">Accueil</a></li>
-        <li><a href="#projets-nhco" class="nav-link" data-section="projets-nhco">Projet NHCO</a></li>
+        <li><a href="#projets-nhco" class="nav-link" data-section="projets-nhco">Projets NHCO</a></li>
         <li><a href="#projets-garrice" class="nav-link" data-section="projets-garrice">Projet Garrice</a></li>
         <li><a href="#projets-veolia" class="nav-link" data-section="projets-veolia">Projets Veolia</a></li>
         <li><a href="#projets-ui" class="nav-link" data-section="projets-ui">Projets UI</a></li>
       </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
     <div class="nav-progress"></div>
   </nav>
 
   <!-- ========== SUB NAV - PROJETS VEOLIA ========== -->
   <nav class="sub-nav sub-nav-veolia" id="subNavVeolia">
+    <div class="sub-nav-header">
+      <span class="sub-nav-section-label">Projets Veolia</span>
+    </div>
     <div class="sub-nav-inner">
       <a href="#veolia-contexte" class="sub-link active" data-sub="veolia-contexte">Contexte Veolia</a>
       <a href="#veolia-grand-compte" class="sub-link" data-sub="veolia-grand-compte">Projet Grand compte</a>
@@ -34,26 +43,35 @@
       <a href="#veolia-portail" class="sub-link" data-sub="veolia-portail">Portail consommateurs</a>
       <a href="#veolia-internes" class="sub-link" data-sub="veolia-internes">Applications internes</a>
     </div>
+    <div class="sub-nav-progressbar"><div class="sub-nav-progressbar-fill"></div></div>
   </nav>
 
   <!-- ========== SUB NAV - PROJETS UI ========== -->
   <nav class="sub-nav sub-nav-ui" id="subNavUI">
+    <div class="sub-nav-header">
+      <span class="sub-nav-section-label">Projets UI</span>
+    </div>
     <div class="sub-nav-inner">
       <a href="#ui-ipark" class="sub-link active" data-sub="ui-ipark">iPark</a>
       <a href="#ui-addipay" class="sub-link" data-sub="ui-addipay">Addipay</a>
       <a href="#ui-ride" class="sub-link" data-sub="ui-ride">Ride</a>
       <a href="#ui-cabann" class="sub-link" data-sub="ui-cabann">Cabann</a>
     </div>
+    <div class="sub-nav-progressbar"><div class="sub-nav-progressbar-fill"></div></div>
   </nav>
 
   <!-- ========== SUB NAV - PROJET NHCO ========== -->
   <nav class="sub-nav sub-nav-nhco" id="subNavNhco">
+    <div class="sub-nav-header">
+      <span class="sub-nav-section-label">Projets NHCO</span>
+    </div>
     <div class="sub-nav-inner">
       <a href="#nhco-contexte" class="sub-link active" data-sub-nhco="nhco-contexte">Contexte de Mission</a>
       <a href="#nhco-aminobot" class="sub-link" data-sub-nhco="nhco-aminobot">Aminobot : Assistant Conversationnel</a>
       <a href="#nhco-backoffice" class="sub-link" data-sub-nhco="nhco-backoffice">Aminobot : Back-office</a>
       <a href="#nhco-xp" class="sub-link" data-sub-nhco="nhco-xp">Expérience Client &amp; Fidélisation</a>
     </div>
+    <div class="sub-nav-progressbar"><div class="sub-nav-progressbar-fill"></div></div>
   </nav>
 
   <!-- ========== SIDE NAV — Aminobot Assistant ========== -->
@@ -142,13 +160,13 @@
       <span class="side-dot"></span>
       <span class="side-label">Coordonnées</span>
     </a>
-    <a href="#formations" class="side-link" data-anchor="formations">
-      <span class="side-dot"></span>
-      <span class="side-label">Formations</span>
-    </a>
     <a href="#experiences" class="side-link" data-anchor="experiences">
       <span class="side-dot"></span>
       <span class="side-label">Expériences</span>
+    </a>
+    <a href="#portfolio" class="side-link" data-anchor="portfolio">
+      <span class="side-dot"></span>
+      <span class="side-label">Projets</span>
     </a>
   </nav>
 
@@ -315,19 +333,19 @@
             <div class="accueil-contact">
               <a href="tel:+33783371520" class="contact-pill">
                 <span class="pill-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.66 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.57 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </span>
                 Téléphone : 07 83 37 15 20
               </a>
               <a href="mailto:justine_calvao@hotmail.fr" class="contact-pill">
                 <span class="pill-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </span>
                 E-mail : justine_calvao@hotmail.fr
               </a>
               <a href="assets/CV/CV UX UI DESIGNER JUSTINE CALVAO.pdf" download class="contact-pill contact-pill-cv">
                 <span class="pill-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                 </span>
                 Curriculum Vitae
               </a>
@@ -346,144 +364,224 @@
       </div>
     </section>
 
-    <!-- ==================== FORMATIONS ==================== -->
-    <section id="formations" class="section section-formations">
+    <!-- ==================== EXPÉRIENCES ==================== -->
+    <section id="experiences" class="section section-formations">
       <div class="formations-wrap">
 
-        <!-- Titre -->
         <div class="formations-title-row reveal">
           <span class="formations-bullet"></span>
           <div class="formations-title-inner">
             <div class="formations-title-hl"></div>
-            <h2 class="formations-title">FORMATIONS</h2>
+            <h2 class="formations-title">EXPÉRIENCES</h2>
           </div>
         </div>
 
-        <!-- Zone timeline -->
         <div class="tl-area reveal">
           <div class="tl-line"></div>
 
-          <!-- Item 1 : Bac STMG — TOP -->
+          <!-- 1 : 7+2 ads — TOP -->
           <div class="tl-item tl-top" style="left: 0%; width: 26%;">
             <div class="tl-card">
-              <h3>Bac STMG - Option Gestion et finance - Lycée Condorcet</h3>
-              <p>/Management / Gestion de projet / gestion entrepreneuriale</p>
+              <h3>Cheffe de projet digital — 7+2 ads concept</h3>
+              <p>/Web · E-commerce · WordPress · SEO</p>
             </div>
             <div class="tl-vline tl-vline-top"></div>
             <div class="tl-dot"></div>
-            <span class="tl-year tl-year-up">2018</span>
+            <span class="tl-year tl-year-up">Sept. 2020 – Août 2022</span>
           </div>
 
-          <!-- Item 2 : BTS — BOTTOM -->
+          <!-- 2 : Freelance — BOTTOM -->
           <div class="tl-item tl-bottom" style="left: 14.5%; width: 29%;">
-            <span class="tl-year tl-year-down">2018 - 2020</span>
+            <span class="tl-year tl-year-down">2021 – Auj.</span>
             <div class="tl-dot"></div>
             <div class="tl-vline tl-vline-bottom"></div>
             <div class="tl-card">
-              <h3>BTS Support à l'action managériale - Teilhard de Chardin</h3>
-              <p>/Management / Gestion de projet</p>
+              <h3>UX/UI Designer Freelance</h3>
+              <p>/PME · TPE · Figma · Identité visuelle</p>
             </div>
           </div>
 
-          <!-- Item 3 : Bachelor — TOP -->
+          <!-- 3 : Veolia — TOP -->
           <div class="tl-item tl-top" style="left: 36.5%; width: 29%;">
             <div class="tl-card">
-              <h3>Bachelor Chef de projet digital - ECV Digital - Paris 11ème</h3>
-              <p>/Gestion de projet / Introduction UX / Développement Web /Comportement consommateur / Ergonomie / Création Digitale /Marketing Digital / Stratégie de marque</p>
+              <h3>Product Designer — DSI Veolia Eau</h3>
+              <p>/Parcours complexes · Recherche UX · Figma</p>
             </div>
             <div class="tl-vline tl-vline-top"></div>
             <div class="tl-dot"></div>
-            <span class="tl-year tl-year-up">2020 - 2021</span>
+            <span class="tl-year tl-year-up">Sept. 2022 – Janv. 2025</span>
           </div>
 
-          <!-- Item 4 : Studi — BOTTOM -->
-          <div class="tl-item tl-bottom" style="left: 51.4%; width: 32%;">
-            <span class="tl-year tl-year-down">2022</span>
+          <!-- 4 : Garrice — BOTTOM -->
+          <div class="tl-item tl-bottom" style="left: 57%; width: 26%;">
+            <span class="tl-year tl-year-down">Mars – Sept. 2025</span>
             <div class="tl-dot"></div>
             <div class="tl-vline tl-vline-bottom"></div>
             <div class="tl-card">
-              <h3>Studi - Formation Webdesign</h3>
-              <p>/Conception de site Web (arborescence, contenu, maquette, charte graphique…) /Création des supports de communication /Collaboration et suivi du projet avec l'équipe /Optimisation de l'accessibilité et de la qualité de l'interface</p>
+              <h3>Product Designer — Garrice</h3>
+              <p>/E-commerce semi-luxe · Shopify · Refonte</p>
             </div>
           </div>
 
-          <!-- Item 5 : Mastère — TOP -->
-          <div class="tl-item tl-top" style="left: 70.9%; width: 29%;">
+          <!-- 5 : NHCO — TOP -->
+          <div class="tl-item tl-top" style="left: 72%; width: 28%;">
             <div class="tl-card">
-              <h3>Mastère UX/UI Design - ECV Digital - Paris 11ème</h3>
-              <p>/Design d'interface / Psychologie Cognitive / Architecture de l'information / Co-création et Design System / Recherche utilisateurs</p>
+              <h3>Product Designer — NHCO × Chiesi</h3>
+              <p>/IA · B2B/B2C · Fidélisation</p>
             </div>
             <div class="tl-vline tl-vline-top"></div>
             <div class="tl-dot"></div>
-            <span class="tl-year tl-year-up">2022 - 2024</span>
+            <span class="tl-year tl-year-up">Sept. 2025 – Avril 2026</span>
           </div>
 
         </div><!-- /tl-area -->
       </div><!-- /formations-wrap -->
     </section>
 
-    <!-- ==================== EXPÉRIENCES ==================== -->
-    <section id="experiences" class="section section-experiences">
-      <div class="exp-wrap">
+    <!-- ==================== PORTFOLIO SHOWCASE ==================== -->
+    <section id="portfolio" class="section section-portfolio">
+      <div class="portfolio-wrap">
 
-        <!-- Titre -->
-        <div class="exp-title-row reveal">
-          <span class="exp-bullet"></span>
-          <div class="exp-title-inner">
-            <div class="exp-title-hl"></div>
-            <h2 class="exp-section-title">EXPERIENCES</h2>
+        <div class="formations-title-row reveal">
+          <span class="formations-bullet"></span>
+          <div class="formations-title-inner">
+            <div class="formations-title-hl"></div>
+            <h2 class="formations-title">PROJETS</h2>
           </div>
         </div>
 
-        <!-- Grille 4 colonnes -->
-        <div class="exp-grid reveal-stagger">
-
-          <!-- Col 1 : Freelance -->
-          <div class="exp-col">
-            <div class="exp-date">2021<br>/2025</div>
-            <div class="exp-body">
-              <p class="exp-job">Freelance UX-UI Designer – Small Projects</p>
-              <p class="exp-desc">/Accompagnement de TPE et indépendants dans la création de leur présence digitale<br>/Conception UX/UI de sites vitrines (maquettes et intégration légère)<br>/Création d'identités visuelles : logos, chartes graphiques, supports print &amp; web<br>/Recherches utilisateurs, benchmark concurrentiel et recommandations stratégiques<br>/Gestion de projet en autonomie, de la prise de brief à la mise en ligne</p>
+        <!-- ── NHCO ── -->
+        <div class="portfolio-company reveal">
+          <div class="portfolio-company-head">
+            <div class="portfolio-company-text">
+              <span class="portfolio-company-role">Product Designer</span>
+              <h3 class="portfolio-company-name">NHCO × Chiesi</h3>
+              <span class="portfolio-company-dates">Sept. 2025 – Avril 2026 · Bois-Colombes</span>
+              <ul class="portfolio-company-bullets">
+                <li>UR/UX/UI B2B/B2C · IA conversationnelle · Fidélisation</li>
+                <li>Recherche terrain officines · Benchmark produits IA</li>
+                <li>Conception interfaces B2B et parcours B2C</li>
+              </ul>
+            </div>
+            <img src="assets/NHCO/asset_logo_nhco.svg" alt="NHCO" class="portfolio-company-logo">
+          </div>
+          <div class="portfolio-projects-row">
+            <div class="portfolio-text-card reveal-stagger" onclick="goToProject('projets-nhco','nhco-aminobot')">
+              <div class="portfolio-text-card-num">01</div>
+              <div class="portfolio-text-card-body">
+                <p class="portfolio-text-card-title">Assistant Conversationnel</p>
+                <p class="portfolio-text-card-keywords">Analyse V1 · Cadrage UX · Recherche terrain · Benchmark</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
+            </div>
+            <div class="portfolio-text-card reveal-stagger" onclick="goToProject('projets-nhco','nhco-backoffice')">
+              <div class="portfolio-text-card-num">02</div>
+              <div class="portfolio-text-card-body">
+                <p class="portfolio-text-card-title">Back-office Aminobot</p>
+                <p class="portfolio-text-card-keywords">Analyse existant · Cadrage V1 · Structuration V2 · Conception UI</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
+            </div>
+            <div class="portfolio-text-card reveal-stagger" onclick="goToProject('projets-nhco','nhco-xp')">
+              <div class="portfolio-text-card-num">03</div>
+              <div class="portfolio-text-card-body">
+                <p class="portfolio-text-card-title">Expérience Client &amp; Fidélisation</p>
+                <p class="portfolio-text-card-keywords">Recadrage · Profils · Benchmark · Ateliers · Structuration</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
             </div>
           </div>
+        </div>
 
-          <div class="exp-sep"></div>
-
-          <!-- Col 2 : 7+2 ads -->
-          <div class="exp-col">
-            <div class="exp-date">2020<br>/2022</div>
-            <div class="exp-body">
-              <p class="exp-job">Chef de projet digital chez 7+2 ads concept en Alternance et Freelance</p>
-              <p class="exp-desc">/Création et maintenance d'un site ecommerce sous Wordpress<br>. Création du design du site via un thème et des plugins<br>. Création d'articles pour site web<br>. Mise en place du référencement, du reporting, et de l'optimisation du site (SEO)<br>/Réalisation de campagnes publicitaires<br>/Production des newsletters quotidiennes sur mailchimp et ciblage<br>/Community management</p>
+        <!-- ── VEOLIA ── -->
+        <div class="portfolio-company reveal">
+          <div class="portfolio-company-head">
+            <div class="portfolio-company-text">
+              <span class="portfolio-company-role">Product Designer</span>
+              <h3 class="portfolio-company-name">DSI Veolia Eau</h3>
+              <span class="portfolio-company-dates">Sept. 2022 – Janv. 2025 · Saint-Maurice</span>
+              <ul class="portfolio-company-bullets">
+                <li>Design d'interface : maquettes interactives Figma, contribution design system</li>
+                <li>Recherche utilisateur : entretiens qualitatifs, analyse verbatims</li>
+                <li>Arborescence et parcours utilisateurs complexes</li>
+                <li>Ateliers UX avec les métiers pour aligner design et besoins opérationnels</li>
+              </ul>
+            </div>
+            <img src="assets/Veolia/Asset_Logo_Veolia.png" alt="Veolia" class="portfolio-company-logo">
+          </div>
+          <div class="portfolio-projects-row portfolio-projects-row--4">
+            <div class="portfolio-img-card reveal-stagger" onclick="goToProject('projets-veolia','veolia-grand-compte')">
+              <div class="portfolio-card-img-wrap">
+                <img src="assets/Veolia/asset_maquette-hifi-gc.jpeg" alt="Grand Compte">
+              </div>
+              <div class="portfolio-card-body">
+                <p class="portfolio-card-title">Projet Grand Compte</p>
+                <p class="portfolio-card-desc">Qualitatif · Quantitatif · Hi-fi</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
+            </div>
+            <div class="portfolio-img-card reveal-stagger" onclick="goToProject('projets-veolia','veolia-app-mobile')">
+              <div class="portfolio-card-img-wrap">
+                <img src="assets/Veolia/asset_maquette-hifi_app-mobile.png" alt="App Mobile">
+              </div>
+              <div class="portfolio-card-body">
+                <p class="portfolio-card-title">Application Mobile</p>
+                <p class="portfolio-card-desc">Parcours · Tests · iOS</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
+            </div>
+            <div class="portfolio-img-card reveal-stagger" onclick="goToProject('projets-veolia','veolia-portail')">
+              <div class="portfolio-card-img-wrap">
+                <img src="assets/Veolia/asset_maquettes-hifi_portail-conso.png" alt="Portail">
+              </div>
+              <div class="portfolio-card-body">
+                <p class="portfolio-card-title">Portail Consommateurs</p>
+                <p class="portfolio-card-desc">Multi-marques · Design System</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
+            </div>
+            <div class="portfolio-img-card reveal-stagger" onclick="goToProject('projets-veolia','veolia-internes')">
+              <div class="portfolio-card-img-wrap">
+                <img src="assets/Veolia/asset_mercure.png" alt="Applications internes">
+              </div>
+              <div class="portfolio-card-body">
+                <p class="portfolio-card-title">Applications Internes</p>
+                <p class="portfolio-card-desc">Mercure · Observatoire · IRIS</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
             </div>
           </div>
+        </div>
 
-          <div class="exp-sep"></div>
-
-          <!-- Col 3 : Veolia -->
-          <div class="exp-col">
-            <div class="exp-date">2022<br>/2024</div>
-            <div class="exp-body">
-              <p class="exp-job">UX-UI Designer à la DSI de Veolia eau</p>
-              <p class="exp-desc"><strong>/Design d'interface</strong> : Création de maquettes interactives sur Figma, alignées aux standards UX et UI, participation au design system pour garantir la cohérence visuelle<br><strong>/Recherche utilisateur</strong> : Conduite de recherches qualitatives pour collecter les attentes et frustrations des utilisateurs finaux<br><strong>/Arborescence et parcours utilisateurs</strong> : Définition des structures de navigation et optimisation des flux d'utilisateur<br><strong>/Benchmarking</strong> : Analyse concurrentielle approfondie pour identifier les standards et opportunités d'amélioration<br><strong>/Ateliers UX</strong> : Organisation d'ateliers UX avec les métiers pour aligner les objectifs de design et les besoins opérationnels</p>
+        <!-- ── GARRICE ── -->
+        <div class="portfolio-company reveal">
+          <div class="portfolio-company-head">
+            <div class="portfolio-company-text">
+              <span class="portfolio-company-role">Product Designer</span>
+              <h3 class="portfolio-company-name">Garrice</h3>
+              <span class="portfolio-company-dates">Mars – Septembre 2025 · Paris</span>
+              <ul class="portfolio-company-bullets">
+                <li>Audit UX et refonte graphique du site e-commerce semi-luxe</li>
+                <li>Analyse parcours utilisateurs (données analytiques, heatmaps)</li>
+                <li>Benchmark concurrentiel mode/luxe · Conception wireframes et maquettes Figma</li>
+                <li>Suivi d'implémentation jusqu'au lancement sur Shopify</li>
+              </ul>
+            </div>
+            <img src="assets/Garrice/asset_logo_garrice.svg" alt="Garrice" class="portfolio-company-logo">
+          </div>
+          <div class="portfolio-projects-row portfolio-projects-row--1">
+            <div class="portfolio-text-card portfolio-text-card--wide reveal-stagger" onclick="goToProject('projets-garrice', null)">
+              <div class="portfolio-text-card-num">01</div>
+              <div class="portfolio-text-card-body">
+                <p class="portfolio-text-card-title">Refonte E-commerce Garrice</p>
+                <p class="portfolio-text-card-keywords">Audit UX · Benchmark · Maquettes Figma · Implémentation Shopify</p>
+              </div>
+              <span class="portfolio-card-arrow">→</span>
             </div>
           </div>
+        </div>
 
-          <div class="exp-sep"></div>
-
-          <!-- Col 4 : Garrice -->
-          <div class="exp-col">
-            <div class="exp-date">03-10<br>/2025</div>
-            <div class="exp-body">
-              <p class="exp-job">UX-UI Designer chez Garrice - Semi luxe</p>
-              <p class="exp-desc">Audit UX et refonte graphique du site ecommerce<br>. Analyse des parcours utilisateurs et du comportement (données, heatmaps)<br>. Identification des points de friction et formulation de recommandations UX<br>. Benchmark concurrentiel des pratiques ecommerce dans le secteur mode/luxe<br>. Conception des améliorations UX/UI (wireframes, maquettes Figma)<br>. Refonte graphique dans le respect de l'univers de marque et des codes du secteur</p>
-            </div>
-          </div>
-
-          <div class="exp-sep"></div>
-
-        </div><!-- /exp-grid -->
-      </div><!-- /exp-wrap -->
+      </div><!-- /portfolio-wrap -->
     </section>
 
     <!-- ==================== PROJETS VEOLIA ==================== -->
@@ -499,31 +597,27 @@
               <h2 class="projet-main-title projet-veolia-title">x Veolia</h2>
             </div>
           </div>
-          <p class="projet-subtitle">Refonte de l'agence en ligne</p>
-          <p class="projet-meta">Rôle : <strong>Recherche utilisateur et design d'interface</strong> &nbsp; Outils : <strong>Figma, Figjam, Notion, Dovetail</strong> &nbsp; Temps : <strong>2 ans</strong></p>
+          <p class="projet-meta">Rôle : <strong>Recherche utilisateur et design d'interface</strong> &nbsp; Outils : <strong>Figma, Figjam, Miro, Notion, Dovetail</strong> &nbsp; Temps : <strong>2 ans et 4 mois</strong></p>
+
+          <div class="veolia-contexte-content">
+            <div class="contexte-columns veolia-contexte-columns">
+              <div class="contexte-block nhco-contexte-block">
+                <h3><span class="nhco-block-icon">🏢</span> Contexte Veolia</h3>
+                <p>Veolia a lancé une <strong>restructuration de sa DSI</strong> pour améliorer la relation client, avec la mise en place d'un <strong>nouveau CRM</strong> et la <strong>refonte de l'agence en ligne</strong>. L'objectif était de <strong>moderniser les outils digitaux</strong> et de renforcer la communication avec les clients.</p>
+              </div>
+              <div class="contexte-block nhco-contexte-block">
+                <h3><span class="nhco-block-icon">🤝🏼</span> Collaboration</h3>
+                <p>J'ai collaboré étroitement avec les <strong>métiers</strong>, les <strong>Business Analysts</strong>, les <strong>développeurs</strong>, et les <strong>utilisateurs finaux</strong>. Mon rôle était de capter les besoins métiers et d'intégrer une <strong>approche UX/UI</strong> pour créer des solutions alignées avec les attentes des utilisateurs et des différentes parties prenantes.</p>
+              </div>
+              <div class="contexte-block nhco-contexte-block">
+                <h3><span class="nhco-block-icon">🎯</span> Mon Rôle</h3>
+                <p>En tant qu'<strong>UX/UI Designer</strong>, ma mission était de <strong>redéfinir les parcours clients</strong> et d'améliorer l'expérience utilisateur. Dans un contexte où la démarche UX/UI était encore peu développée, j'ai travaillé à rendre les <strong>interfaces plus accessibles et intuitives</strong>.</p>
+              </div>
+            </div>
+          </div>
 
           <div class="projet-screenshots-grid">
             <img src="assets/Veolia/Asset_Contexte_Veolia.png" alt="Captures du projet Veolia" class="veolia-contexte-img">
-          </div>
-
-          <div class="veolia-contexte-content">
-            <div class="contexte-main-row">
-              <div class="contexte-block">
-                <h3>Contexte Veolia</h3>
-                <p>Veolia a lancé une restructuration de sa DSI pour améliorer la relation client, avec la mise en place d'un nouveau CRM et la refonte de l'agence en ligne. L'objectif était de moderniser les outils digitaux et de renforcer la communication avec les clients.</p>
-              </div>
-              <img src="assets/Veolia/Asset_Logo_Veolia.png" alt="Logo Veolia" class="veolia-logo-big">
-            </div>
-            <div class="contexte-columns">
-              <div class="contexte-block">
-                <h3>Collaboration</h3>
-                <p>J'ai collaboré étroitement avec les métiers, les Business Analysts, les développeurs, et les utilisateurs finaux. Mon rôle était de capter les besoins métiers et d'intégrer une approche UX/UI pour créer des solutions alignées avec les attentes des utilisateurs et des différentes parties prenantes.</p>
-              </div>
-              <div class="contexte-block">
-                <h3>Mon Rôle</h3>
-                <p>En tant qu'UX/UI Designer, ma mission était de redéfinir les parcours clients et d'améliorer l'expérience utilisateur. Dans un contexte où la démarche UX/UI était encore peu développée, j'ai travaillé à rendre les interfaces plus accessibles et intuitives.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -541,44 +635,44 @@
           </div>
 
           <div class="gc-intro-grid">
-            <div class="gc-intro-block">
-              <h3>Un peu de contexte</h3>
-              <p>A date, un parcours à été développé pour l'ensemble de nos clients sans prendre en compte la complexité des usages de nos clients professionnels. La solution proposée ne permet pas de naviguer de façon fluide et optimale pour nos abonnées ayant un grand nombre d'abonnements (grands comptes, collectivités,...).</p>
+            <div class="gc-intro-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">📋</span> Un peu de contexte</h3>
+              <p>A date, un parcours à été développé pour l'ensemble de nos clients sans prendre en compte la complexité des usages de nos <strong>clients professionnels</strong>. La solution proposée ne permet pas de naviguer de façon fluide et optimale pour nos abonnés ayant un <strong>grand nombre d'abonnements</strong> (<strong>grands comptes, collectivités</strong>,...).</p>
             </div>
-            <div class="gc-intro-block">
-              <h3>Objectifs</h3>
-              <p>Améliorer la navigation sur la nouvelle agence en ligne pour nos clients professionnels en répondant à leur attentes et besoins pour une gestion simplifiée, fluidifiée et sécurisée de leurs abonnements. Permettre une navigation optimisée pour les usagers de Veolia ayant de nombreux points d'eau.</p>
+            <div class="gc-intro-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">🎯</span> Objectifs</h3>
+              <p>Améliorer la navigation sur la nouvelle agence en ligne pour nos clients professionnels en répondant à leurs attentes et besoins pour une <strong>gestion simplifiée, fluidifiée et sécurisée</strong> de leurs abonnements. Permettre une navigation optimisée pour les usagers de Veolia ayant de <strong>nombreux points d'eau</strong>.</p>
             </div>
           </div>
 
           <div class="gc-problematique">
             <h3>Problématique</h3>
-            <p>Comment améliorer l'expérience de navigation pour les professionnels ayant un grand nombre d'abonnements, afin de leur permettre de gérer efficacement leurs contrats, alors que le parcours actuel est principalement adapté aux utilisateurs particuliers avec un nombre limité de contrats et permet uniquement de consulter les abonnements de façon unitaire ?</p>
+            <p>Comment améliorer <strong>l'expérience de navigation</strong> pour les professionnels ayant un <strong>grand nombre d'abonnements</strong>, afin de leur permettre de <strong>gérer efficacement leurs contrats</strong>, alors que le parcours actuel est principalement adapté aux utilisateurs particuliers avec un nombre limité de contrats et permet uniquement de consulter les abonnements de façon unitaire ?</p>
           </div>
 
           <div class="etapes-section" id="gc-etapes">
-            <p class="gc-etapes-label">Etapes de l'étude</p>
-            <h3>Un projet en 5 étapes</h3>
-            <div class="etapes-grid">
-              <div class="etape etape-pink">
-                <img class="etape-icon" src="assets/Veolia/asset_icon_group-discussion-meeting.png" alt="Etude qualitative">
-                <span>Etude Qualitative</span>
+            <div class="gc-etapes-label">Etapes de l'étude</div>
+            <h3 class="gc-section-title">Un projet en 5 étapes</h3>
+            <div class="nhco-xp-steps nhco-xp-steps--5">
+              <div class="nhco-xp-step-card" data-num="1">
+                <div class="nhco-xp-step-num-badge">1</div>
+                <p class="nhco-xp-step-name">Etude Qualitative</p>
               </div>
-              <div class="etape etape-purple">
-                <img class="etape-icon" src="assets/Veolia/asset_table.png" alt="Etude quantitative">
-                <span>Etude Quantitative</span>
+              <div class="nhco-xp-step-card" data-num="2">
+                <div class="nhco-xp-step-num-badge">2</div>
+                <p class="nhco-xp-step-name">Etude Quantitative</p>
               </div>
-              <div class="etape etape-green">
-                <img class="etape-icon" src="assets/Veolia/asset_icon_graph.png" alt="Analyse des résultats">
-                <span>Analyse des Résultats</span>
+              <div class="nhco-xp-step-card" data-num="3">
+                <div class="nhco-xp-step-num-badge">3</div>
+                <p class="nhco-xp-step-name">Analyse des Résultats</p>
               </div>
-              <div class="etape etape-yellow">
-                <img class="etape-icon" src="assets/Veolia/asset_icon_painting.png" alt="UI Design">
-                <span>UI Design</span>
+              <div class="nhco-xp-step-card" data-num="4">
+                <div class="nhco-xp-step-num-badge">4</div>
+                <p class="nhco-xp-step-name">UI Design</p>
               </div>
-              <div class="etape etape-red">
-                <img class="etape-icon" src="assets/Veolia/asset_icon_icon_outline_hand-up.png" alt="Tests utilisateurs">
-                <span>Tests Utilisateurs</span>
+              <div class="nhco-xp-step-card" data-num="5">
+                <div class="nhco-xp-step-num-badge">5</div>
+                <p class="nhco-xp-step-name">Tests Utilisateurs</p>
               </div>
             </div>
           </div>
@@ -589,65 +683,89 @@
           <div class="section-container gc-study-inner">
             <div class="gc-section-tag gc-tag-pink">Etude qualitative</div>
             <h3 class="gc-section-title">Méthodologie des entretiens avec les utilisateurs</h3>
-            <div class="gc-methodo-steps reveal-stagger">
-              <div class="gc-methodo-step">
-                <strong>Rédaction du protocole d'entretien</strong>
-                <p>Co définition des objectifs et rédaction du guide d'entretien</p>
+            <div class="gc-methodo-3col reveal-stagger">
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Rédaction du protocole d'entretien</strong>
+                <p class="gc-methodo-card-desc">Co définition des objectifs et rédaction du guide d'entretien</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <strong>Définition du panel utilisateur à interroger</strong>
-                <p>Sur différentes régions pour chacune des 4 typologies de clients</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Définition du panel utilisateur à interroger</strong>
+                <p class="gc-methodo-card-desc">Sur différentes régions pour chacune des <strong>4 typologies de clients</strong></p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.66 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.57 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-                <strong>Organisation des entretiens</strong>
-                <p>Prise de contact et programmation des entretiens</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.66 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.57 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Organisation des entretiens</strong>
+                <p class="gc-methodo-card-desc">Prise de contact et programmation des entretiens</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
-                <strong>Conduite des entretiens utilisateurs</strong>
-                <p>Interroger, comprendre, déceler les besoins et problématiques des utilisateurs.</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Conduite des entretiens utilisateurs</strong>
+                <p class="gc-methodo-card-desc">Interroger, comprendre, déceler les <strong>besoins et problématiques</strong> des utilisateurs.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-                <strong>Analyse, exploration et recommandation</strong>
-                <p>Analyse et synthèse des enseignements recueillis</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Analyse, exploration et recommandation</strong>
+                <p class="gc-methodo-card-desc">Analyse et synthèse des enseignements recueillis</p>
               </div>
             </div>
 
             <h4 class="gc-subsection-title">Déroulement des entretiens</h4>
-            <div class="gc-deroulement-grid">
-              <div class="gc-deroulement-col">
-                <strong>Les objectifs</strong>
-                <ul>
+            <div class="gc-derou-panel">
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                  <span class="gc-derou-col-eyebrow">Objectifs</span>
+                </div>
+                <ul class="gc-derou-list">
                   <li>Identifier et comprendre les besoins et attentes</li>
                   <li>Se renseigner sur les informations dont ils ont besoin pour gérer leur compte et connaître leur environnement de travail</li>
                   <li>Aider nos utilisateurs à partager leur expérience pour détecter les potentiels points de friction ou irritants rencontrés sur l'outil qu'ils utilisent actuellement ainsi que les fonctionnalités utiles et à garder pour les versions suivantes.</li>
                 </ul>
               </div>
-              <div class="gc-deroulement-col">
-                <div class="gc-derou-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                <strong>12 participants</strong>
-                <ul>
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <span class="gc-derou-col-eyebrow">Panel</span>
+                </div>
+                <div class="gc-derou-stat-block">
+                  <div class="gc-derou-big-stat">12</div>
+                  <div class="gc-derou-big-label">participants</div>
+                </div>
+                <ul class="gc-derou-list">
                   <li>4 collectivités (mairie, communauté de commune)</li>
                   <li>4 grands professionnels régionaux (copropriétés, bailleurs sociaux)</li>
                   <li>4 grands professionnels multi régions avec plusieurs adresses de facturation</li>
                 </ul>
               </div>
-              <div class="gc-deroulement-col">
-                <div class="gc-derou-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                <strong>Durée des entretiens</strong>
-                <p>Durée moyenne des entretiens</p>
-                <p class="gc-duration">45 minutes à 1 heure</p>
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="gc-derou-col-eyebrow">Durée</span>
+                </div>
+                <div class="gc-derou-stat-block">
+                  <div class="gc-derou-big-stat">45'</div>
+                  <div class="gc-derou-big-label">à 1 heure en moyenne</div>
+                </div>
               </div>
             </div>
 
             <div class="gc-guide-block">
               <h4 class="gc-subsection-title">Guide d'entretien</h4>
-              <div class="gc-guide-text">
-                <p>Pour rédiger le protocole et le guide d'entretien UX du projet grand compte, je me suis appuyée sur une approche centrée sur l'utilisateur en utilisant les principes du Design Thinking (empathie, définition, idéation, prototypage, tests).</p>
-                <p>J'ai commencé par identifier les objectifs clés du projet et les besoins des utilisateurs finaux, en collaboration avec les parties prenantes. L'accent a été mis sur le recueil des besoins et des attentes des utilisateurs, en leur donnant l'opportunité de s'exprimer librement sur leurs attentes, frustrations, et suggestions. Le guide d'entretien a été structuré autour de questions ouvertes pour encourager cette expression.</p>
+              <div class="gc-guide-intro">
+                <p>Pour rédiger le protocole et le guide d'entretien UX du projet grand compte, je me suis appuyée sur une approche centrée sur l'utilisateur en utilisant les principes du <strong>Design Thinking</strong> (empathie, définition, idéation, prototypage, tests).</p>
+                <p>J'ai commencé par identifier les objectifs clés du projet et les besoins des utilisateurs finaux, en collaboration avec les <strong>parties prenantes</strong>. L'accent a été mis sur le recueil des besoins et des attentes des utilisateurs, en leur donnant l'opportunité de s'exprimer librement sur leurs attentes, frustrations, et suggestions. Le guide d'entretien a été structuré autour de <strong>questions ouvertes</strong> pour encourager cette expression.</p>
               </div>
               <div class="gc-guide-images">
                 <img src="assets/Veolia/guide_entretien_1.png" alt="Guide d'entretien 1" />
@@ -731,43 +849,62 @@
             <div class="gc-section-tag gc-tag-purple">Etude quantitative</div>
             <h3 class="gc-section-title">Méthodologie de l'étude quantitative</h3>
             <p class="gc-section-intro">L'étude quantitative permet de savoir si les insights recueillis lors des entretiens de l'étude qualitative sont représentatifs du plus grand nombre des usagers.</p>
-            <div class="gc-methodo-steps reveal-stagger">
-              <div class="gc-methodo-step">
-                <strong>Rédaction du questionnaire</strong>
-                <p>Les questions sont formulées à partir des insights obtenus suite à l'étude qualitative dans le but de mesurer les comportements et opinions des usagers.</p>
+            <div class="gc-methodo-3col reveal-stagger">
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Rédaction du questionnaire</strong>
+                <p class="gc-methodo-card-desc">Les questions sont formulées à partir des <strong>insights obtenus</strong> suite à l'étude qualitative dans le but de mesurer les comportements et opinions des usagers.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <strong>Définition du panel utilisateur à interroger</strong>
-                <p>Une cinquantaine de personnes, tout profil confondu parmi les professionnels.</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Définition du panel utilisateur à interroger</strong>
+                <p class="gc-methodo-card-desc"><strong>Une cinquantaine de personnes</strong>, tout profil confondu parmi les professionnels.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-                <strong>Définition de la forme et du mode d'envoi</strong>
-                <p>Envoi à partir d'une boite mail générique. Rédaction du mail à destination des clients interrogés.</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Définition de la forme et du mode d'envoi</strong>
+                <p class="gc-methodo-card-desc">Envoi à partir d'une <strong>boite mail générique</strong>. Rédaction du mail à destination des clients interrogés.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-                <strong>Diffusion du questionnaire</strong>
-                <p>Questionnaire envoyé à partir d'une boite mail générique Veolia.</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Diffusion du questionnaire</strong>
+                <p class="gc-methodo-card-desc">Questionnaire envoyé à partir d'une boite mail générique <strong>Veolia</strong>.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-                <strong>Analyse, exploration et recommandation</strong>
-                <p>Analyse et synthèse des enseignements recueillis</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Analyse, exploration et recommandation</strong>
+                <p class="gc-methodo-card-desc">Analyse et synthèse des enseignements recueillis</p>
               </div>
             </div>
 
             <div class="gc-realisation-block">
               <div class="gc-realisation-text">
                 <h4>Réalisation du questionnaire</h4>
-                <p>Dans le cadre de notre projet Grand Compte, nous avons conçu un formulaire pour une étude quantitative visant à confirmer les résultats obtenus lors de l'étude qualitative préalable. La création de ce formulaire a impliqué plusieurs étapes clés pour garantir sa pertinence et son efficacité.</p>
-                <div class="gc-realisation-subtitle">Analyse des Résultats Qualitatifs</div>
-                <p>Tout d'abord, nous avons analysé les conclusions principales de l'étude qualitative afin d'identifier les variables et les indicateurs pertinents à mesurer quantitativement. Cette analyse nous a permis de définir des questions précises et ciblées, alignées avec les thèmes et les hypothèses formulés lors de l'étude qualitative.</p>
-                <div class="gc-realisation-subtitle">Conception du Questionnaire</div>
-                <p>Ensuite, nous avons élaboré le questionnaire en veillant à ce qu'il soit clair, structuré et facilement compréhensible par les répondants. Nous avons opté pour une combinaison de questions fermées et de questions à échelle de Likert pour obtenir des données à la fois quantitatives et comparables.</p>
-                <div class="gc-realisation-subtitle">Ajustements et Validation</div>
-                <p>Après la conception initiale du questionnaire, nous avons procédé à une série d'ajustements pour optimiser la clarté et la précision des questions, en nous basant sur les objectifs de l'étude et les feedbacks internes. Une version finale a ensuite été validée avant le déploiement de l'étude.</p>
+                <p class="gc-realisation-intro">Dans le cadre de notre projet Grand Compte, nous avons conçu un formulaire pour une <strong>étude quantitative</strong> visant à confirmer les résultats obtenus lors de l'<strong>étude qualitative</strong> préalable. La création de ce formulaire a impliqué <strong>plusieurs étapes clés</strong> pour garantir sa pertinence et son efficacité.</p>
+                <div class="gc-realisation-steps">
+                  <div class="gc-realisation-step-block">
+                    <div class="gc-realisation-subtitle"><span class="gc-realisation-step-num">01</span>Analyse des Résultats Qualitatifs</div>
+                    <p>Tout d'abord, nous avons analysé les <strong>conclusions principales</strong> de l'étude qualitative afin d'identifier les <strong>variables et indicateurs pertinents</strong> à mesurer quantitativement. Cette analyse nous a permis de définir des <strong>questions précises et ciblées</strong>, alignées avec les thèmes et les hypothèses formulés lors de l'étude qualitative.</p>
+                  </div>
+                  <div class="gc-realisation-step-block">
+                    <div class="gc-realisation-subtitle"><span class="gc-realisation-step-num">02</span>Conception du Questionnaire</div>
+                    <p>Ensuite, nous avons élaboré le questionnaire en veillant à ce qu'il soit <strong>clair, structuré et facilement compréhensible</strong> par les répondants. Nous avons opté pour une combinaison de <strong>questions fermées</strong> et de <strong>questions à échelle de Likert</strong> pour obtenir des données à la fois quantitatives et comparables.</p>
+                  </div>
+                  <div class="gc-realisation-step-block">
+                    <div class="gc-realisation-subtitle"><span class="gc-realisation-step-num">03</span>Ajustements et Validation</div>
+                    <p>Après la conception initiale, nous avons procédé à une série d'ajustements pour optimiser la <strong>clarté et la précision des questions</strong>, en nous basant sur les objectifs de l'étude et les feedbacks internes. Une <strong>version finale</strong> a ensuite été validée avant le déploiement de l'étude.</p>
+                  </div>
+                </div>
               </div>
               <div class="gc-realisation-images">
                 <div class="gc-q-wrap gc-q-wrap-1"><img src="assets/Veolia/asset_questionnaire_1.png" alt="Questionnaire 1" /></div>
@@ -784,24 +921,46 @@
         <div class="gc-study-section reveal" id="gc-ateliers">
           <div class="section-container gc-study-inner">
             <div class="gc-section-tag gc-tag-green">Les ateliers</div>
+            <h3 class="gc-section-title">Les ateliers</h3>
             <!-- Ligne 1 : texte + card ateliers_1 & 2 -->
             <div class="gc-atelier-top">
               <div class="gc-atelier-text">
-                <p>Plusieurs ateliers ont été organisés avec des objectifs distincts. Le premier avait pour but d'explorer et de compléter les micro parcours identifiés, ainsi que d'identifier les écrans impactés. Le deuxième visait à rédiger le protocole de test en collaboration avec les métiers.</p>
+                <div class="gc-atelier-items">
+                  <div class="gc-atelier-item">
+                    <span class="gc-atelier-item-badge">01</span>
+                    <div class="gc-atelier-item-body">
+                      <strong class="gc-atelier-item-title">Exploration des micro-parcours</strong>
+                      <p>Explorer et compléter les <strong>micro parcours identifiés</strong>, ainsi qu'identifier les <strong>écrans impactés</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="gc-atelier-item">
+                    <span class="gc-atelier-item-badge">02</span>
+                    <div class="gc-atelier-item-body">
+                      <strong class="gc-atelier-item-title">Rédaction du protocole de test</strong>
+                      <p>Rédiger le protocole de test en <strong>collaboration avec les métiers</strong>.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="gc-atelier-card-12">
                 <img src="assets/Veolia/asset_ateliers_1.png" alt="Atelier 1" />
                 <img src="assets/Veolia/asset_ateliers_2.png" alt="Atelier 2" />
               </div>
             </div>
-            <!-- Ligne 2 : ateliers_3, 4+5 superposés, 6 -->
+            <!-- Ligne 2 : ateliers_3, 4+5 superposés, 6 — avec fond gris NHCO -->
             <div class="gc-atelier-bottom">
-              <img src="assets/Veolia/asset_ateliers_3.png" alt="Atelier 3" class="gc-atelier-solo" />
-              <div class="gc-atelier-overlap">
-                <img src="assets/Veolia/asset_ateliers_4.png" alt="Atelier 4" class="gc-atelier-back" />
-                <img src="assets/Veolia/asset_ateliers_5.png" alt="Atelier 5" class="gc-atelier-front" />
+              <div class="gc-atelier-photo-panel">
+                <img src="assets/Veolia/asset_ateliers_3.png" alt="Atelier 3" class="gc-atelier-solo" />
               </div>
-              <img src="assets/Veolia/asset_ateliers_6.png" alt="Atelier 6" class="gc-atelier-solo" />
+              <div class="gc-atelier-photo-panel gc-atelier-photo-panel--overlap">
+                <div class="gc-atelier-overlap">
+                  <img src="assets/Veolia/asset_ateliers_4.png" alt="Atelier 4" class="gc-atelier-back" />
+                  <img src="assets/Veolia/asset_ateliers_5.png" alt="Atelier 5" class="gc-atelier-front" />
+                </div>
+              </div>
+              <div class="gc-atelier-photo-panel">
+                <img src="assets/Veolia/asset_ateliers_6.png" alt="Atelier 6" class="gc-atelier-solo" />
+              </div>
             </div>
           </div>
         </div>
@@ -813,7 +972,8 @@
             <div class="gc-atelier-block">
               <div class="gc-atelier-text">
                 <h4>Les Userflow</h4>
-                <p>Le Userflow permet d'optimiser le parcours des utilisateurs en fonction de leurs besoins spécifiques identifiés lors de la recherche. Cela garantit que les fonctionnalités et interactions de l'espace professionnel sont bien alignées avec les attentes des utilisateurs, facilitant ainsi leur navigation et leur efficacité au sein de l'interface. Le user flow sert également de guide pour s'assurer que l'expérience utilisateur reste fluide et cohérente avec les insights recueillis lors de l'étude.</p>
+                <span class="gc-purpose-chip">Guide de référence navigation</span>
+                <p>Le Userflow permet d'<strong>optimiser le parcours des utilisateurs</strong> en fonction de leurs <strong>besoins spécifiques</strong> identifiés lors de la recherche. Cela garantit que les fonctionnalités et interactions de l'espace professionnel sont bien alignées avec les attentes des utilisateurs, facilitant ainsi leur navigation et leur efficacité au sein de l'interface. Le user flow sert également de guide pour s'assurer que l'<strong>expérience utilisateur</strong> reste fluide et cohérente avec les <strong>insights recueillis</strong> lors de l'étude.</p>
               </div>
               <div class="gc-parcours-card">
                 <img src="assets/Veolia/asset_parcours_userflow.png" alt="Userflow" class="gc-parcours-img" />
@@ -822,7 +982,8 @@
             <div class="gc-atelier-block gc-atelier-block--noborder">
               <div class="gc-atelier-text">
                 <h4>Le Macro Parcours</h4>
-                <p>Les macros parcours ont été créés avant les wireframes pour obtenir une vision d'ensemble afin de nous aider à identifier tous les cas possibles avant de passer à la conception des maquettes.</p>
+                <span class="gc-purpose-chip">Vision d'ensemble avant maquettes</span>
+                <p>Les macros parcours ont été créés <strong>avant les wireframes</strong> pour obtenir une <strong>vision d'ensemble</strong> afin de nous aider à <strong>identifier tous les cas possibles</strong> avant de passer à la conception des maquettes.</p>
               </div>
               <div class="gc-parcours-card">
                 <img src="assets/Veolia/asset_parcours_macro-parcours.png" alt="Macro Parcours" class="gc-parcours-img gc-parcours-img--small" />
@@ -847,47 +1008,67 @@
           <div class="section-container gc-study-inner">
             <div class="gc-section-tag gc-tag-pink">Tests Utilisateurs</div>
             <h3 class="gc-section-title">Méthodologie de tests utilisateurs</h3>
-            <div class="gc-methodo-steps gc-methodo-3 reveal-stagger">
-              <div class="gc-methodo-step">
-                <strong>Définition de la méthodologie et des cas d'usage à tester</strong>
-                <p>Les cas d'usage à tester seront ceux améliorés suite aux études qualitatives et quantitatives.</p>
+            <div class="gc-methodo-3col reveal-stagger">
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="6" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="6" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="18"/><line x1="20" y1="10" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="17" y1="18" x2="23" y2="18"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Définition de la méthodologie et des cas d'usage à tester</strong>
+                <p class="gc-methodo-card-desc">Les <strong>cas d'usage</strong> à tester seront ceux améliorés suite aux études qualitatives et quantitatives.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <strong>Définition du panel utilisateur à interroger</strong>
-                <p>Utilisateurs identifiés permettant de tester les maquettes réalisées sur la base des conclusions tirées de l'étude.</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Définition du panel utilisateur à interroger</strong>
+                <p class="gc-methodo-card-desc">Utilisateurs identifiés permettant de tester les <strong>maquettes réalisées</strong> sur la base des conclusions tirées de l'étude.</p>
               </div>
-              <div class="gc-methodo-step">
-                <span class="gc-step-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
-                <strong>Analyse, exploration et recommandation</strong>
-                <p>Analyse et synthèse des enseignements recueillis</p>
+              <div class="gc-methodo-card">
+                <div class="gc-methodo-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <strong class="gc-methodo-card-title">Analyse, exploration et recommandation</strong>
+                <p class="gc-methodo-card-desc">Analyse et synthèse des enseignements recueillis</p>
               </div>
             </div>
 
             <h4 class="gc-subsection-title">Déroulement des tests</h4>
-            <div class="gc-deroulement-grid">
-              <div class="gc-deroulement-col">
-                <strong>Les objectifs</strong>
-                <ul>
-                  <li>Évaluer la navigation cible maquettée grâce aux études menées</li>
-                  <li>Repérer les éventuels points de frictions et les insights</li>
+            <div class="gc-derou-panel">
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                  <span class="gc-derou-col-eyebrow">Objectifs</span>
+                </div>
+                <ul class="gc-derou-list">
+                  <li>Évaluer la <strong>navigation cible</strong> maquettée grâce aux études menées</li>
+                  <li>Repérer les éventuels <strong>points de frictions</strong> et les insights</li>
                   <li>Observer la façon dont l'utilisateur se sert de la solution proposée</li>
                 </ul>
               </div>
-              <div class="gc-deroulement-col">
-                <div class="gc-derou-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                <strong>12 participants</strong>
-                <ul>
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <span class="gc-derou-col-eyebrow">Panel</span>
+                </div>
+                <div class="gc-derou-stat-block">
+                  <div class="gc-derou-big-stat">12</div>
+                  <div class="gc-derou-big-label">participants</div>
+                </div>
+                <ul class="gc-derou-list">
                   <li>4 collectivités (mairie, communauté de commune)</li>
                   <li>4 grands professionnels régionaux (copropriétés, bailleurs sociaux)</li>
                   <li>4 grands professionnels multi régions avec plusieurs adresses de facturation</li>
                 </ul>
               </div>
-              <div class="gc-deroulement-col">
-                <div class="gc-derou-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                <strong>Durée des tests</strong>
-                <p>Durée moyenne des entretiens</p>
-                <p class="gc-duration">30 à 45 minutes</p>
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="gc-derou-col-eyebrow">Durée</span>
+                </div>
+                <div class="gc-derou-stat-block">
+                  <div class="gc-derou-big-stat">30'</div>
+                  <div class="gc-derou-big-label">à 45 minutes en moyenne</div>
+                </div>
               </div>
             </div>
 
@@ -907,21 +1088,21 @@
           <div class="gc-header-titles">
             <h2 class="projet-page-title">Veolia &amp; moi</h2>
             <p class="projet-page-subtitle">Application mobile</p>
+            <p class="projet-page-desc">Refonte graphique du suivi de consommation</p>
           </div>
-          <p class="projet-page-desc">Refonte graphique du suivi de consommation</p>
 
           <div class="projet-intro-grid reveal">
-            <div class="contexte-block">
-              <h3>Un peu de contexte</h3>
-              <p>L'application mobile de Veolia permet de suivre la consommation d'eau, mais son interface actuelle est peu intuitive et difficile à naviguer. Les utilisateurs éprouvent des difficultés à accéder et comprendre leurs données. Il était donc nécessaire de moderniser l'application pour rendre l'information plus accessible et améliorer l'expérience globale.</p>
+            <div class="contexte-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">📱</span> Un peu de contexte</h3>
+              <p>L'application mobile de Veolia permet de <strong>suivre la consommation d'eau</strong>, mais son interface actuelle est <strong>peu intuitive</strong> et difficile à naviguer. Les utilisateurs éprouvent des difficultés à accéder et comprendre leurs données. Il était donc nécessaire de <strong>moderniser l'application</strong> pour rendre l'information plus accessible et améliorer l'expérience globale.</p>
             </div>
-            <div class="contexte-block">
-              <h3>Objectifs</h3>
-              <p>L'objectif était de refondre l'interface de suivi de consommation de l'application mobile de Veolia afin de simplifier la navigation, améliorer la lisibilité des données et offrir une expérience utilisateur plus fluide et moderne.</p>
+            <div class="contexte-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">🎯</span> Objectifs</h3>
+              <p>L'objectif était de <strong>refondre l'interface de suivi de consommation</strong> de l'application mobile de Veolia afin de <strong>simplifier la navigation</strong>, <strong>améliorer la lisibilité des données</strong> et offrir une expérience utilisateur plus fluide et moderne.</p>
             </div>
           </div>
 
-          <div id="am-etapes" class="gc-section-tag">Étapes du projet</div>
+          <div id="am-etapes" class="gc-section-tag" style="margin-top:64px;">Étapes du projet</div>
           <div class="am-etapes-section">
             <h3 class="am-etapes-title">Un projet en plusieurs étapes</h3>
 
@@ -985,54 +1166,78 @@
             </div>
           </div>
 
-          <div id="am-maquettes" class="gc-section-tag">Maquettes</div>
+          <div id="am-maquettes" class="gc-section-tag" style="margin-top:64px;">Maquettes</div>
           <h2 class="am-maquettes-title">Maquettes Hi-fi</h2>
           <div class="am-maquettes-visual">
             <img src="assets/Veolia/asset_maquette-hifi_app-mobile.png" alt="Maquettes Hi-fi Application mobile" style="width:100%; border-radius:12px;">
           </div>
 
           <!-- Tests utilisateurs -->
-          <div id="am-tests" class="gc-section-tag">Tests utilisateurs</div>
+          <div id="am-tests" class="gc-section-tag" style="margin-top:64px;">Tests utilisateurs</div>
           <div class="am-tests-section">
             <h2 class="am-maquettes-title">Tests utilisateurs</h2>
 
-            <div class="am-tests-intro">
-              <p>Le but de ce test est de déterminer si les nouvelles fonctionnalités développées à partir de nos hypothèses répondent aux besoins des utilisateurs et aux objectifs de Veolia.</p>
+            <div class="am-tests-statement">
+              <p>Le but de ce test est de déterminer si les <strong>nouvelles fonctionnalités développées</strong> à partir de nos hypothèses répondent aux <strong>besoins des utilisateurs</strong> et aux <strong>objectifs de Veolia</strong>.</p>
             </div>
 
-            <h3 class="am-tests-subtitle">Déroulement des tests</h3>
+            <h4 class="gc-subsection-title">Déroulement des tests</h4>
 
-            <div class="am-tests-deroulement">
-              <div class="am-tests-col">
-                <h4 class="am-tests-col-title">Définition de la méthodologie et des cas d'usage à tester</h4>
-                <p class="am-tests-col-desc">Méthode Lean UX sur un court parcours en maquettes hautes fidélités, avec des micro-interactions, et avec seulement 3 écrans sous la forme d'un questionnaire contextualisé.</p>
+            <div class="gc-derou-panel">
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="6" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="6" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="18"/><line x1="20" y1="10" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="17" y1="18" x2="23" y2="18"/></svg>
+                  <span class="gc-derou-col-eyebrow">Méthodologie</span>
+                </div>
+                <ul class="gc-derou-list">
+                  <li><strong>Méthode Lean UX</strong> sur un court parcours en maquettes hautes fidélités avec micro-interactions</li>
+                  <li>3 écrans sous la forme d'un <strong>questionnaire contextualisé</strong></li>
+                  <li>Panel : utilisateurs identifiés à partir des <strong>avis sur l'application mobile</strong></li>
+                  <li>Analyse et synthèse des enseignements recueillis</li>
+                </ul>
               </div>
-              <div class="am-tests-col">
-                <span class="am-tests-col-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <h4 class="am-tests-col-title">Déroulement des tests</h4>
-                <p class="am-tests-col-desc">Des questions avant, après chaque scénario testé et après le test.<br>3 scénarios à tester.<br>Les tests dureront entre 30 et 45 minutes.</p>
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  <span class="gc-derou-col-eyebrow">Scénarios</span>
+                </div>
+                <div class="gc-derou-stat-block">
+                  <div class="gc-derou-big-stat">3</div>
+                  <div class="gc-derou-big-label">scénarios à tester</div>
+                </div>
+                <ul class="gc-derou-list">
+                  <li>Questions avant le test</li>
+                  <li>Questions après chaque scénario testé</li>
+                  <li>Questions après le test</li>
+                </ul>
               </div>
-              <div class="am-tests-col">
-                <span class="am-tests-col-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <h4 class="am-tests-col-title">Définition du panel utilisateur à tester</h4>
-                <p class="am-tests-col-desc">Utilisateurs identifiés à partir des avis sur l'application mobile.</p>
-              </div>
-              <div class="am-tests-col">
-                <span class="am-tests-col-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></span>
-                <h4 class="am-tests-col-title">Analyse, exploration et recommandation</h4>
-                <p class="am-tests-col-desc">Analyse et synthèse des enseignements recueillis</p>
+              <div class="gc-derou-col">
+                <div class="gc-derou-col-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="gc-derou-col-eyebrow">Durée</span>
+                </div>
+                <div class="gc-derou-stat-block">
+                  <div class="gc-derou-big-stat">30-45'</div>
+                  <div class="gc-derou-big-label">minutes par session</div>
+                </div>
               </div>
             </div>
 
             <h3 class="am-tests-subtitle">Cadrage des tests</h3>
 
             <div class="am-tests-cadrage-grid">
-              <img src="assets/Veolia/asset_cadrage-tests_img1.png" alt="Cadrage des tests 1" style="width:100%; border-radius:8px;">
-              <img src="assets/Veolia/asset_cadrage-tests_img2.png" alt="Cadrage des tests 2" style="width:100%; border-radius:8px;">
+              <div class="gc-atelier-photo-panel">
+                <img src="assets/Veolia/asset_cadrage-tests_img1.png" alt="Cadrage des tests 1" class="gc-atelier-solo">
+              </div>
+              <div class="gc-atelier-photo-panel">
+                <img src="assets/Veolia/asset_cadrage-tests_img2.png" alt="Cadrage des tests 2" class="gc-atelier-solo">
+              </div>
             </div>
 
             <h3 class="am-tests-subtitle" style="margin-top:48px;">Prototype testé</h3>
-            <img src="assets/Veolia/asset_prototype_teste_app-mobile.png" alt="Prototype testé" style="width:100%; border-radius:8px;">
+            <div class="gc-atelier-photo-panel" style="display:block; padding:24px;">
+              <img src="assets/Veolia/asset_prototype_teste_app-mobile.png" alt="Prototype testé" class="gc-atelier-solo">
+            </div>
           </div>
 
         </div>
@@ -1048,17 +1253,17 @@
           </div>
 
           <div class="projet-intro-grid trois-cols reveal">
-            <div class="contexte-block">
-              <h3>Un peu de contexte</h3>
-              <p>J'ai été chargée de concevoir les écrans de l'espace portail consommateurs de Veolia. Il s'agit de la porte d'entrée pour le consommateur pour accéder à son espace personnel, réaliser ses démarches et consulter les informations de son service de l'eau.</p>
+            <div class="contexte-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">📋</span> Un peu de contexte</h3>
+              <p>J'ai été chargée de concevoir les écrans de <strong>l'espace portail consommateurs de Veolia</strong>. Il s'agit de la <strong>porte d'entrée</strong> pour le consommateur pour accéder à son espace personnel, réaliser ses démarches et consulter les informations de son service de l'eau.</p>
             </div>
-            <div class="contexte-block">
-              <h3>Challenge</h3>
-              <p>Mon défi principal était de concevoir une interface flexible, capable de s'ajuster aux contributions des métiers tout en restant intuitive pour les utilisateurs finaux.</p>
+            <div class="contexte-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">⚡</span> Challenge</h3>
+              <p>Mon défi principal était de concevoir une <strong>interface flexible</strong>, capable de <strong>s'ajuster aux contributions des métiers</strong> tout en restant intuitive pour les utilisateurs finaux.</p>
             </div>
-            <div class="contexte-block">
-              <h3>Approche</h3>
-              <p>Pour répondre à ce besoin, j'ai mené des ateliers pour capter les exigences des métiers. Ces ateliers visaient à comprendre comment le design devait s'adapter aux différents types de contenu et à la localisation des utilisateurs.</p>
+            <div class="contexte-block nhco-contexte-block">
+              <h3><span class="nhco-block-icon">🧭</span> Approche</h3>
+              <p>Pour répondre à ce besoin, j'ai mené des <strong>ateliers</strong> pour capter les exigences des métiers. Ces ateliers visaient à comprendre comment le design devait s'adapter aux <strong>différents types de contenu</strong> et à la <strong>localisation des utilisateurs</strong>.</p>
             </div>
           </div>
 
@@ -1070,7 +1275,7 @@
           </div>
 
           <!-- Maquettes Hi-fi marques locales -->
-          <div id="portail-marques" class="gc-section-tag" style="margin-top:80px;">Maquettes Hi-fi marques locales</div>
+          <div id="portail-marques" class="gc-section-tag" style="margin-top:64px;">Maquettes Hi-fi marques locales</div>
           <h2 class="am-maquettes-title">Maquettes Hi-fi marques locales</h2>
           <p class="portail-marques-intro">
             <strong>Un enjeu important était lié à la notion de marque blanche chez Veolia.</strong><br>
@@ -1109,13 +1314,13 @@
                 <div class="mercure-cards">
                   <div class="mercure-card">
                     <div class="mercure-card-header">
-                      <h4>Besoin metier</h4>
+                      <h4><span class="nhco-block-icon">🔧</span> Besoin métier</h4>
                     </div>
                     <p>Créer <strong>une interface utilisateur intuitive</strong> permettant au département de la direction consommateurs de Veolia d'envoyer des courriers, sms et e-mails en masse de manière efficace. L'application doit offrir la possibilité de paramétrer les envois en fonction des différentes marques du groupe, tout en permettant de choisir entre plusieurs canaux d'envoi (email, courrier postal, SMS). L'objectif final était de <strong>simplifier le processus d'envoi tout en assurant un suivi en temps réel et une restitution complète des envois effectués</strong>.</p>
                   </div>
                   <div class="mercure-card">
                     <div class="mercure-card-header">
-                      <h4>Mon rôle</h4>
+                      <h4><span class="nhco-block-icon">🧢</span> Mon rôle</h4>
                     </div>
                     <p>Concevoir l'interface utilisateur en me basant sur les besoins des utilisateurs, en créant des Wireframes et des prototypes interactifs. J'assure <strong>une expérience fluide</strong> en intégrant les options de personnalisation et de gestion des canaux d'envoi. Je collabore avec les équipes de développement et les parties prenantes pour garantir que l'application réponde aux attentes et offre une expérience utilisateur optimale.</p>
                   </div>
@@ -1138,13 +1343,13 @@
               <div class="mercure-content" style="grid-template-columns: 1fr 1fr;">
                 <div class="mercure-card">
                   <div class="mercure-card-header">
-                    <h4>Besoin metier</h4>
+                    <h4><span class="nhco-block-icon">🔧</span> Besoin métier</h4>
                   </div>
                   <p>Concevoir <strong>l'arborescence, l'architecture de l'information et le design de l'interface</strong> de l'Observatoire des Usages pour permettre aux équipes de Veolia d'analyser et anticiper les volumes de consommation par segment et usage. L'objectif est de faciliter le pilotage des actions commerciales, d'améliorer la performance, et de fixer des objectifs de réduction de consommation, tout en assurant l'adoption durable de l'outil par les différentes filières internes.</p>
                 </div>
                 <div class="mercure-card">
                   <div class="mercure-card-header">
-                    <h4>Mon rôle</h4>
+                    <h4><span class="nhco-block-icon">🧢</span> Mon rôle</h4>
                   </div>
                   <p>Je conçois l'interface de l'Observatoire des usages, <strong>en rendant les données de consommation facilement accessibles et exploitables</strong> pour les utilisateurs. Je crée des designs intuitifs pour faciliter le pilotage des actions commerciales et l'analyse des performances, tout en collaborant avec les équipes pour garantir que l'outil réponde aux besoins stratégiques des différentes filières.</p>
                 </div>
@@ -1180,13 +1385,13 @@
                 <div class="mercure-cards">
                   <div class="mercure-card">
                     <div class="mercure-card-header">
-                      <h4>Besoin metier</h4>
+                      <h4><span class="nhco-block-icon">🔧</span> Besoin métier</h4>
                     </div>
                     <p>Améliorer l'interface du fil d'événements IRIS, intégré dans Salesforce, pour <strong>rendre la gestion des interactions clients plus efficace</strong>. L'objectif était de fournir à toutes les typologies de conseillers clientèle (en agence comme en CRC) un cockpit centralisant l'ensemble des interactions avec les clients ainsi que les modifications liées à ces derniers ou à leurs abonnements.</p>
                   </div>
                   <div class="mercure-card">
                     <div class="mercure-card-header">
-                      <h4>Mon rôle</h4>
+                      <h4><span class="nhco-block-icon">🧢</span> Mon rôle</h4>
                     </div>
                     <p>J'<strong>optimise</strong> la présentation des événements et des informations liées aux clients, <strong>en facilitant la navigation et la prise de décision pour les utilisateurs</strong> du CRM dans le but d'<strong>amélioration l'expérience utilisateur et la lisibilité</strong>. Je conçois des Wireframes et des prototypes interactifs, tout en travaillant étroitement avec les équipes techniques pour assurer que les nouvelles fonctionnalités s'intègrent harmonieusement dans le CRM.</p>
                   </div>
@@ -1315,7 +1520,7 @@
                 <h4 class="nhco-step-title">Lancer le recueil des premiers retours V1</h4>
               </div>
               <div class="nhco-step-body">
-                <div class="nhco-step-layout">
+                <div class="nhco-step-layout" style="grid-template-columns: 1fr 1.8fr; align-items: start; gap: 56px;">
                   <div>
                     <p>Afin de comprendre comment la V1 était perçue sur le terrain, j'ai conçu un questionnaire qualitatif à destination des forces de vente. L'objectif était d'identifier les premiers irritants rencontrés, de comprendre ce qui freinait l'usage réel de l'outil, et de faire émerger des pistes d'évolution pour la suite du projet.</p>
                     <div class="nhco-tags">
@@ -1326,7 +1531,7 @@
                       <span class="nhco-tag">Axes d'évolution</span>
                     </div>
                   </div>
-                  <div class="nhco-dual-img">
+                  <div class="nhco-dual-img" style="margin-top: 48px;">
                     <img src="assets/NHCO/Assistant conversationnel/image 183.png" alt="Questionnaire V1" class="nhco-step-img">
                     <img src="assets/NHCO/Assistant conversationnel/image 180.png" alt="Résultats V1" class="nhco-step-img">
                   </div>
@@ -1509,9 +1714,9 @@
                   <span class="nhco-tag">Retranscriptions Userbit</span>
                   <span class="nhco-tag">Tagging verbatims</span>
                 </div>
-                <div class="nhco-dual-img">
-                  <img src="assets/NHCO/Assistant conversationnel/image 148.png" alt="Retranscriptions Userbit" class="nhco-step-img" style="max-height: 380px; object-fit: cover; object-position: top;">
-                  <img src="assets/NHCO/Assistant conversationnel/image 149.png" alt="Tags board" class="nhco-step-img" style="max-height: 380px; object-fit: cover; object-position: top;">
+                <div class="nhco-dual-img" style="grid-template-columns: 1fr 2fr; align-items: start;">
+                  <img src="assets/NHCO/Assistant conversationnel/image 148.png" alt="Retranscriptions Userbit" class="nhco-step-img" style="height: 340px; object-fit: cover; object-position: top;">
+                  <img src="assets/NHCO/Assistant conversationnel/image 149.png" alt="Tags board" class="nhco-step-img" style="height: 340px; object-fit: cover; object-position: top;">
                 </div>
               </div>
             </div>
@@ -1666,7 +1871,7 @@
             </div>
 
             <!-- Sources côte à côte -->
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+            <div class="nhco-cols-2">
               <div class="nhco-contexte-block contexte-block">
                 <h3>Source 1 — RAG / contenu général</h3>
                 <p>Base documentaire issue d'un OneNote hébergé dans SharePoint, utilisée comme source de référence pour les contenus produits, mémos, documentations et réponses générales.</p>
@@ -1692,7 +1897,7 @@
             </div>
 
             <!-- Objectifs + Mon Rôle -->
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+            <div class="nhco-cols-2">
               <div class="nhco-contexte-block contexte-block">
                 <h3><span class="nhco-block-icon">🎯</span> Objectifs</h3>
                 <p>Mon objectif était de repenser cette logique pour centraliser la gestion du contenu dans un back-office unique. L'enjeu était double : fiabiliser les réponses de l'IA et offrir aux métiers un mode de gestion plus clair, plus structuré et plus maintenable dans le temps.</p>
@@ -1930,7 +2135,7 @@
 
         <!-- SECTION 1 — Recadrage du besoin -->
         <div class="gc-study-section reveal" id="nhco-xp-recadrage">
-          <div class="section-container">
+          <div class="section-container gc-study-inner">
             <div class="gc-section-tag">Recadrage du besoin</div>
             <p class="nhco-xp-lead">Le projet est initialement orienté vers une solution. J'ai repositionné la réflexion autour du problème à résoudre : définir un service de fidélisation réellement utile pour les clients NHCO.</p>
 
@@ -1992,7 +2197,7 @@
 
         <!-- SECTION 2 — Analyse de l'existant & de la data -->
         <div class="gc-study-section reveal" id="nhco-xp-analyse">
-          <div class="section-container">
+          <div class="section-container gc-study-inner">
             <div class="gc-section-tag">Analyse de l'existant &amp; de la data</div>
             <p class="nhco-xp-lead">J'ai analysé les données disponibles pour comprendre les comportements clients et objectiver les enjeux.</p>
             <div class="nhco-tags" style="margin-bottom:24px;">
@@ -2002,7 +2207,7 @@
               <span class="nhco-tag">Parcours client</span>
             </div>
             <img src="assets/NHCO/XP clt et fid/Analyse de la data.png" alt="Analyse de la data" class="nhco-step-img" style="width:100%; border-radius:var(--radius-md); box-shadow:var(--shadow-card); display:block; margin-bottom:20px;">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="nhco-xp-phase-grid">
               <div class="nhco-contexte-block contexte-block" style="margin-bottom:0;">
                 <h3>Cette phase met en évidence</h3>
                 <div class="nhco-xp-constats" style="margin-top:12px;">
@@ -2047,7 +2252,7 @@
 
         <!-- SECTION 3 — Structuration de profils comportementaux -->
         <div class="gc-study-section reveal" id="nhco-xp-profils">
-          <div class="section-container">
+          <div class="section-container gc-study-inner">
             <div class="gc-section-tag">Structuration de profils comportementaux</div>
 
             <div class="nhco-xp-profils-grid">
@@ -2167,7 +2372,7 @@
 
         <!-- SECTION 4 — Benchmark des modèles de fidélisation -->
         <div class="gc-study-section reveal" id="nhco-xp-benchmark">
-          <div class="section-container">
+          <div class="section-container gc-study-inner">
             <div class="gc-section-tag">Benchmark des modèles de fidélisation</div>
             <p class="nhco-xp-lead">J'ai analysé différents modèles d'engagement pour identifier des mécaniques pertinentes, au-delà d'un modèle transactionnel.</p>
             <div class="nhco-tags" style="margin-bottom:24px;">
@@ -2199,7 +2404,7 @@
 
         <!-- SECTION 4 — Ateliers de cadrage & convergence -->
         <div class="gc-study-section reveal" id="nhco-xp-ateliers">
-          <div class="section-container">
+          <div class="section-container gc-study-inner">
             <div class="gc-section-tag">Ateliers de cadrage &amp; convergence</div>
             <p class="nhco-xp-lead">J'ai structuré une série d'ateliers pour faire émerger une vision commune de la fidélisation chez NHCO, challenger les hypothèses initiales et transformer des intentions assez ouvertes en cadre stratégique exploitable.</p>
             <div class="nhco-tags" style="margin-bottom:8px;">
@@ -2342,7 +2547,7 @@
 
         <!-- SECTION 5 — Structuration de la démarche cible -->
         <div class="gc-study-section reveal" id="nhco-xp-structuration">
-          <div class="section-container">
+          <div class="section-container gc-study-inner">
             <div class="gc-section-tag">Structuration de la démarche cible</div>
             <p class="nhco-xp-lead">À partir de ces enseignements, j'ai structuré une démarche pour guider la définition de la solution. L'objectif : comprendre les usages réels avant de définir une cible ou un format.</p>
             <div class="nhco-tags" style="margin-bottom:24px;">
@@ -2931,7 +3136,7 @@
           <h3 class="footer-heading">Accès rapides</h3>
           <ul class="footer-links">
             <li><a href="#accueil" class="footer-nav-link" data-section="accueil">Accueil</a></li>
-            <li><a href="#projets-nhco" class="footer-nav-link" data-section="projets-nhco">Projet NHCO</a></li>
+            <li><a href="#projets-nhco" class="footer-nav-link" data-section="projets-nhco">Projets NHCO</a></li>
             <li><a href="#projets-veolia" class="footer-nav-link" data-section="projets-veolia">Projets Veolia</a></li>
             <li><a href="#projets-ui" class="footer-nav-link" data-section="projets-ui">Projets UI</a></li>
           </ul>

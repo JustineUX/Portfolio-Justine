@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nhcoPages = document.querySelectorAll('#projets-nhco .projet-page');
 
   // Sections accessibles au scroll (accueil + ses sous-sections)
-  const scrollSections = document.querySelectorAll('#accueil, #formations, #experiences');
+  const scrollSections = document.querySelectorAll('#accueil, #experiences, #portfolio');
 
   // Side nav — Accueil
   const sideNav = document.getElementById('sideNav');
@@ -73,6 +73,27 @@ document.addEventListener('DOMContentLoaded', () => {
     '#garrice-justine, #garrice-objectif, #garrice-etapes, #garrice-cadrage, #garrice-audit, #garrice-exploration, #garrice-conception, #garrice-composants, #garrice-suivi, #garrice-resultat, #garrice-pratique'
   );
 
+  // ========== SUB-NAV DOTS INDICATOR ==========
+  function updateSubNavProgress(links, navEl) {
+    const container = navEl && navEl.querySelector('.sub-nav-progressbar');
+    if (!container) return;
+    const total = links.length;
+    const activeIndex = Array.from(links).findIndex(l => l.classList.contains('active'));
+    const idx = activeIndex >= 0 ? activeIndex : 0;
+    if (container.children.length !== total) {
+      container.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'sub-nav-dot' + (i === idx ? ' active' : '');
+        container.appendChild(dot);
+      }
+    } else {
+      Array.from(container.children).forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+  }
+
   // ========== SHOW / HIDE PROJECT SECTIONS ==========
   function showProjectSection(section) {
     scrollSections.forEach(s => s.style.display = 'none');
@@ -95,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       subNavNhco.classList.remove('visible');
       veoliaPages.forEach((page, i) => page.style.display = i === 0 ? 'block' : 'none');
       subLinksVeolia.forEach((l, i) => l.classList.toggle('active', i === 0));
+      updateSubNavProgress(subLinksVeolia, subNavVeolia);
     } else if (section === 'projets-ui') {
       uiSection.style.display = '';
       veoliaSection.style.display = 'none';
@@ -105,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       subNavNhco.classList.remove('visible');
       uiPages.forEach((page, i) => page.style.display = i === 0 ? 'block' : 'none');
       subLinksUI.forEach((l, i) => l.classList.toggle('active', i === 0));
+      updateSubNavProgress(subLinksUI, subNavUI);
     } else if (section === 'projets-garrice') {
       if (garriceSectionEl) garriceSectionEl.style.display = '';
       veoliaSection.style.display = 'none';
@@ -132,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         page.style.display = page.id === 'nhco-contexte' ? 'block' : 'none';
       });
       subLinksNhco.forEach((l, i) => l.classList.toggle('active', i === 0));
+      updateSubNavProgress(subLinksNhco, subNavNhco);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -215,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       subLinksNhco.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
+      updateSubNavProgress(subLinksNhco, subNavNhco);
 
       nhcoPages.forEach(page => {
         page.style.display = page.id === sub ? 'block' : 'none';
@@ -351,6 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       subLinksVeolia.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
+      updateSubNavProgress(subLinksVeolia, subNavVeolia);
 
       veoliaPages.forEach(page => {
         page.style.display = page.id === sub ? 'block' : 'none';
@@ -409,6 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       subLinksUI.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
+      updateSubNavProgress(subLinksUI, subNavUI);
 
       uiPages.forEach(page => {
         page.style.display = page.id === sub ? 'block' : 'none';
@@ -786,6 +813,35 @@ document.addEventListener('DOMContentLoaded', () => {
     setActive(0);
   }
 
+  // ========== HAMBURGER NAV (mobile) ==========
+  const hamburger = document.getElementById('navHamburger');
+  const navLinksList = document.getElementById('navLinksList');
+
+  if (hamburger && navLinksList) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinksList.classList.toggle('nav-open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinksList.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinksList.classList.remove('nav-open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mainNav.contains(e.target)) {
+        navLinksList.classList.remove('nav-open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   // ========== NAV PROGRESS BAR ==========
   const navProgress = document.querySelector('.nav-progress');
   function updateProgress() {
@@ -797,4 +853,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
+
+  // ========== NAVIGATION DIRECTE VERS UN PROJET ==========
+  window.goToProject = function(section, subId) {
+    navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === section));
+    showProjectSection(section);
+    if (!subId) return;
+    if (section === 'projets-nhco') {
+      nhcoPages.forEach(p => p.style.display = p.id === subId ? 'block' : 'none');
+      subLinksNhco.forEach(l => l.classList.toggle('active', l.dataset.subNhco === subId));
+      updateSubNavProgress(subLinksNhco, subNavNhco);
+      [sideNavNhco, sideNavBO, sideNavXP].forEach(nav => { if (nav) nav.classList.remove('visible'); });
+      if (subId === 'nhco-aminobot' && sideNavNhco) sideNavNhco.classList.add('visible');
+      if (subId === 'nhco-backoffice' && sideNavBO) sideNavBO.classList.add('visible');
+      if (subId === 'nhco-xp' && sideNavXP) sideNavXP.classList.add('visible');
+    } else if (section === 'projets-veolia') {
+      veoliaPages.forEach(p => p.style.display = p.id === subId ? 'block' : 'none');
+      subLinksVeolia.forEach(l => l.classList.toggle('active', l.dataset.sub === subId));
+      updateSubNavProgress(subLinksVeolia, subNavVeolia);
+      [sideNavGC, sideNavAM, sideNavPortail, sideNavInternes].forEach(nav => { if (nav) nav.classList.remove('visible'); });
+      if (subId === 'veolia-grand-compte' && sideNavGC) sideNavGC.classList.add('visible');
+      if (subId === 'veolia-app-mobile' && sideNavAM) sideNavAM.classList.add('visible');
+      if (subId === 'veolia-portail' && sideNavPortail) sideNavPortail.classList.add('visible');
+      if (subId === 'veolia-internes' && sideNavInternes) sideNavInternes.classList.add('visible');
+    }
+  };
 });

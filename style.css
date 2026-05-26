@@ -53,6 +53,11 @@
   /* Transitions */
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition: 0.3s var(--ease-out);
+
+  /* Aliases — variables héritées d'ancienne version, résolues ici */
+  --text-light: var(--text-secondary);
+  --text-dark: var(--black);
+  --primary-light: rgba(110, 63, 243, 0.08);
 }
 
 /* ========== RESET ========== */
@@ -378,6 +383,7 @@ img {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  color: rgba(110, 63, 243, 0.65);
 }
 
 .contact-pill-cv {
@@ -426,15 +432,16 @@ img {
 
 .portfolio-pill {
   display: inline-block;
-  border: 1.5px solid var(--black);
+  background: rgba(110, 63, 243, 0.08);
+  border: 1px solid rgba(110, 63, 243, 0.2);
   border-radius: 100px;
-  padding: 12px 32px;
+  padding: 8px 20px;
   font-family: 'Inter', sans-serif;
-  font-size: clamp(12px, 1.2vw, 15px);
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: clamp(11px, 1.1vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--black);
+  color: var(--primary);
 }
 
 /* ========== FORMATIONS ========== */
@@ -450,7 +457,7 @@ img {
   max-width: 1760px;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 80px 80px;
+  padding: 40px 80px 60px;
   box-sizing: border-box;
   flex: 1;
   display: flex;
@@ -462,7 +469,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .formations-bullet {
@@ -539,7 +546,7 @@ img {
   position: absolute;
   width: 12px;
   height: 12px;
-  background: var(--black);
+  background: var(--primary);
   border-radius: 50%;
   left: 50%;
   transform: translateX(-50%);
@@ -569,11 +576,14 @@ img {
   left: 0;
   right: 0;
   background: var(--surface-raised);
-  border-radius: var(--radius-md);
+  border-radius: 4px var(--radius-md) var(--radius-md) 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   padding: 16px;
   box-sizing: border-box;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border-light);
+  border-left: 3px solid var(--primary);
 }
 .tl-top .tl-card {
   bottom: calc(48% + 6px + 59px + 4px);
@@ -584,7 +594,7 @@ img {
 
 .tl-card h3 {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.3;
   letter-spacing: 0;
@@ -593,11 +603,11 @@ img {
 }
 .tl-card p {
   font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 13px;
   line-height: 1.6;
   letter-spacing: 0;
-  color: var(--text-secondary);
+  color: #7B4FF2;
 }
 
 /* Année dans la carte (Bac STMG) */
@@ -760,6 +770,255 @@ img {
   font-weight: 600;
 }
 
+/* ========== PORTFOLIO SHOWCASE ========== */
+.section-portfolio {
+  padding: 80px 0 120px;
+  background: var(--surface);
+}
+
+.portfolio-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Company row ── */
+.portfolio-company {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: 32px 36px 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease;
+}
+
+.portfolio-company:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.portfolio-company-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.portfolio-company-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolio-company-role {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.portfolio-company-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.portfolio-company-dates {
+  display: block;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 14px;
+}
+
+.portfolio-company-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.portfolio-company-bullets li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.portfolio-company-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.portfolio-company-logo {
+  height: 28px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: auto;
+  opacity: 0.8;
+}
+
+/* ── Project rows ── */
+.portfolio-projects-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.portfolio-projects-row--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.portfolio-projects-row--1 {
+  grid-template-columns: 1fr;
+}
+
+/* ── Text cards (NHCO, Garrice) ── */
+.portfolio-text-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 18px 36px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 90px;
+  transition: transform 0.25s ease-out, border-color 0.25s ease, background 0.25s ease;
+}
+
+.portfolio-text-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(110, 63, 243, 0.25);
+  background: rgba(110, 63, 243, 0.03);
+}
+
+.portfolio-text-card-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+
+.portfolio-text-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.portfolio-text-card-keywords {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Wide card (Garrice) */
+.portfolio-text-card--wide {
+  flex-direction: row;
+  align-items: center;
+  padding: 18px 48px 18px 18px;
+  gap: 16px;
+  min-height: 72px;
+}
+
+.portfolio-text-card--wide .portfolio-text-card-body {
+  flex: 1;
+}
+
+.portfolio-text-card--wide .portfolio-text-card-num {
+  flex-shrink: 0;
+  font-size: 13px;
+}
+
+/* ── Image cards (Veolia) ── */
+.portfolio-img-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: var(--shadow-sm);
+}
+
+.portfolio-img-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.portfolio-img-card .portfolio-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.portfolio-img-card .portfolio-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease-out;
+}
+
+.portfolio-img-card:hover .portfolio-card-img-wrap img {
+  transform: scale(1.04);
+}
+
+.portfolio-card-body {
+  padding: 12px 14px 30px;
+  position: relative;
+}
+
+.portfolio-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+
+.portfolio-card-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Arrow (shared) ── */
+.portfolio-card-arrow {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.portfolio-text-card:hover .portfolio-card-arrow,
+.portfolio-img-card:hover .portfolio-card-arrow {
+  transform: translateX(3px);
+}
+
 /* ========== PROJETS VEOLIA ========== */
 .section-projets-veolia {
   background: var(--white);
@@ -869,18 +1128,27 @@ img {
 }
 
 .projet-page-subtitle {
-  font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--text-light);
-  text-align: center;
-  margin-bottom: 8px;
+  display: inline-block;
+  background: rgba(110, 63, 243, 0.08);
+  border: 1px solid rgba(110, 63, 243, 0.15);
+  border-radius: var(--radius-pill);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  margin-bottom: 18px;
 }
 
 .projet-page-desc {
-  font-size: 14px;
-  color: var(--text-light);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 40px;
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
 }
 
 .projet-intro-grid {
@@ -927,6 +1195,15 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
+}
+
+.veolia-contexte-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 40px;
+}
+
+.veolia-contexte-columns .nhco-contexte-block {
+  align-self: start;
 }
 
 .problematique-block {
@@ -983,22 +1260,8 @@ img {
   position: relative;
 }
 
-/* Cercles décoratifs entre les cartes */
 .etapes-grid::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  right: 10%;
-  height: 160px;
-  transform: translateY(-50%);
-  background: radial-gradient(circle at 10% 50%, #f0f0f0 60px, transparent 61px),
-              radial-gradient(circle at 30% 50%, #f0f0f0 60px, transparent 61px),
-              radial-gradient(circle at 50% 50%, #f0f0f0 60px, transparent 61px),
-              radial-gradient(circle at 70% 50%, #f0f0f0 60px, transparent 61px),
-              radial-gradient(circle at 90% 50%, #f0f0f0 60px, transparent 61px);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .etape {
@@ -1010,12 +1273,14 @@ img {
   padding: 20px;
   width: 160px;
   min-height: 120px;
-  background: #fff;
-  border-radius: 16px;
+  background: var(--surface-raised);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  border-top: 2px solid var(--primary);
   font-size: 14px;
   font-weight: 700;
   color: var(--black);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-card);
 }
 
 .etape-icon {
@@ -1029,7 +1294,10 @@ img {
 .etape-purple,
 .etape-green,
 .etape-yellow,
-.etape-red   { border: 1px solid var(--border); }
+.etape-red   {
+  border: 1px solid var(--border-light);
+  border-top: 2px solid var(--primary);
+}
 
 .etapes-list {
   display: grid;
@@ -1062,15 +1330,14 @@ img {
 }
 
 .am-maquettes-title {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 48px;
-  line-height: 50px;
-  letter-spacing: 0%;
-  text-align: center;
+  font-size: clamp(24px, 3vw, 28px);
+  letter-spacing: -0.01em;
   color: var(--black);
-  margin-top: 64px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 28px;
+  text-align: center;
 }
 
 /* ========== PORTAIL CONSOMMATEURS ========== */
@@ -1134,37 +1401,27 @@ img {
 
 .am-tests-section {
   margin-top: 80px;
-  background: var(--surface);
-  padding: 40px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
 }
 
-.am-tests-intro {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  background: var(--surface-raised);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  margin-top: 40px;
-  margin-bottom: 48px;
-  box-shadow: var(--shadow-sm);
+/* Statement impactant — remplace la carte am-tests-intro */
+.am-tests-statement {
+  border-left: 3px solid var(--primary);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0 40px;
+  max-width: 680px;
 }
 
-.am-tests-intro-icon {
-  font-size: 28px;
-  flex-shrink: 0;
-  line-height: 1.4;
-}
-
-.am-tests-intro p {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text-dark);
+.am-tests-statement p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text);
   margin: 0;
+}
+
+.am-tests-statement strong {
+  color: var(--black);
+  font-weight: 700;
 }
 
 .am-tests-subtitle {
@@ -1180,6 +1437,11 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  margin-bottom: 56px;
+}
+
+/* Espacement après le gc-derou-panel dans la section tests AM */
+.am-tests-section .gc-derou-panel {
   margin-bottom: 56px;
 }
 
@@ -1223,11 +1485,23 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-top: 24px;
+  align-items: start;
+}
+
+.am-tests-cadrage-grid .gc-atelier-photo-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.am-tests-cadrage-grid .gc-atelier-solo {
+  border-radius: 0;
+  display: block;
+  width: 100%;
 }
 
 .am-etapes-section {
   margin-top: 48px;
-  margin-bottom: 80px;
+  margin-bottom: 128px;
 }
 
 .am-etapes-title {
@@ -1237,6 +1511,7 @@ img {
   line-height: 1.2;
   margin-bottom: 32px;
   color: var(--text-dark);
+  text-align: center;
 }
 
 .am-etapes-grid {
@@ -1274,13 +1549,15 @@ img {
   display: inline-block;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 11px;
   line-height: 1;
-  letter-spacing: 0.06em;
-  color: #5F9FDB;
-  background: #DEECF9;
-  border-radius: 4px;
-  padding: 6px 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(110, 63, 243, 0.08);
+  border: 1px solid rgba(110, 63, 243, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
   align-self: flex-start;
 }
 
@@ -1328,8 +1605,8 @@ img {
 }
 
 .am-visual-placeholder {
-  background: #F0F0F0;
-  color: #999;
+  background: var(--border-light);
+  color: var(--text-tertiary);
   font-size: 12px;
   text-align: center;
   padding: 40px 20px;
@@ -1399,6 +1676,10 @@ img {
   font-size: 22px;
   line-height: 1;
   flex-shrink: 0;
+}
+
+#nhco-contexte .contexte-columns > .nhco-contexte-block {
+  align-self: start;
 }
 
 /* ===== NHCO Assistant Conversationnel ===== */
@@ -1871,9 +2152,14 @@ img {
   .nhco-dual-img,
   .nhco-two-cols,
   .nhco-priority-grid,
-  .nhco-insights-grid { grid-template-columns: 1fr; }
+  .nhco-insights-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .nhco-step-layout { align-items: start !important; }
+  .nhco-cols-2 { grid-template-columns: 1fr !important; }
+  .nhco-research-cards { grid-template-columns: 1fr !important; }
+  .nhco-bo-cas-grid { grid-template-columns: 1fr !important; }
   .nhco-etapes-4 { grid-template-columns: 1fr 1fr; }
   .nhco-questions-grid { grid-template-columns: 1fr; }
+  .nhco-dual-img { margin-top: 0 !important; }
 }
 
 /* ======================================================
@@ -2371,6 +2657,11 @@ img {
 }
 
 /* Constats numérotés */
+.nhco-xp-phase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 .nhco-xp-constats {
   display: flex;
   flex-direction: column;
@@ -2671,8 +2962,11 @@ img {
 }
 
 .gc-intro-block h3 {
-  font-size: 16px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
@@ -2683,30 +2977,44 @@ img {
 }
 
 .gc-problematique {
-  background: var(--primary-light);
-  border-radius: 12px;
-  padding: 24px;
+  background: rgba(110, 63, 243, 0.04);
+  border: none;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 22px 28px;
   margin-bottom: 40px;
 }
 
 .gc-problematique h3 {
-  font-size: 16px;
+  font-size: 10px;
   font-weight: 700;
-  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin-bottom: 10px;
 }
 
 .gc-problematique p {
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.7;
+  color: var(--text);
+}
+
+.nhco-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 /* === Study sections === */
 .gc-study-section {
-  padding: 0 0 80px;
+  padding: 0 0 64px;
 }
 
 .gc-study-inner {
-  padding-top: 26px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Section tag banners — teinte violette douce */
@@ -2762,8 +3070,9 @@ img {
   font-size: 14px;
   line-height: 1.7;
   color: var(--text);
-  background: white;
-  border-radius: 10px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
   padding: 16px 20px;
   margin-bottom: 28px;
 }
@@ -2823,10 +3132,10 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  background: white;
+  background: var(--surface-raised);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .gc-deroulement-col {
@@ -2867,7 +3176,7 @@ img {
   content: '–';
   position: absolute;
   left: 0;
-  color: var(--text-light);
+  color: var(--primary);
 }
 
 .gc-deroulement-col p {
@@ -2908,8 +3217,10 @@ img {
 .gc-guide-images img {
   flex: 1;
   min-width: 0;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
   object-fit: contain;
+  box-shadow: var(--shadow-sm);
 }
 
 /* Analyse section */
@@ -2973,10 +3284,9 @@ img {
 }
 
 .gc-frame-title {
-  font-family: var(--font-ui);
   font-size: 13px;
   font-weight: 600;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .gc-frame-card img {
@@ -3016,7 +3326,7 @@ img {
 
 .gc-verbatims-block {
   margin: 40px -40px 0;
-  background: #FAFAFA;
+  background: var(--surface);
   padding: 32px 80px;
 }
 
@@ -3030,7 +3340,7 @@ img {
   flex: 0 0 280px;
   font-family: var(--font-display);
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.25;
   color: var(--black);
 }
@@ -3055,24 +3365,31 @@ img {
   position: relative;
   flex: 1;
   min-width: 0;
-  background: #3478F6;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 18px 18px 4px 18px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px 20px 20px 36px;
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.65;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
 }
 
-.gc-verbatim-bubble::after {
-  content: '';
+.gc-verbatim-bubble::before {
+  content: '\201C';
   position: absolute;
-  bottom: 0;
-  right: -8px;
-  width: 16px;
-  height: 16px;
-  background: #3478F6;
-  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  left: 14px;
+  top: 12px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary);
+  font-family: Georgia, serif;
+}
+
+.gc-verbatim-bubble::after {
+  display: none;
 }
 
 .gc-verbatim-emoji {
@@ -3099,15 +3416,15 @@ img {
 }
 
 .gc-realisation-subtitle {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 8px 12px;
-  background: #F0E9FD;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--primary);
-  margin: 20px 0 8px;
+  margin: 0 0 6px;
 }
 
 .gc-realisation-text p {
@@ -3172,41 +3489,59 @@ img {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 16px;
-  gap: 24px;
+  padding: 20px;
+  gap: 20px;
   flex-shrink: 0;
   width: 480px;
-  background: #FAFAFA;
-  border: 1px solid #F2F2F2;
-  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .gc-atelier-card-12 img {
   flex: 1;
   min-width: 0;
   width: 0;
-  height: 320px;
+  height: 300px;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .gc-atelier-bottom {
   display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  margin-top: 32px;
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+/* Panels fond gris pour les photos du bas — même pattern NHCO que gc-parcours-card */
+.gc-atelier-photo-panel {
+  flex: 1;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.gc-atelier-photo-panel--overlap {
+  padding: 24px 16px;
 }
 
 .gc-atelier-solo {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
+  display: block;
 }
 
 .gc-atelier-overlap {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
   position: relative;
   aspect-ratio: 4 / 3;
 }
@@ -3249,13 +3584,136 @@ img {
   font-size: 20px;
   font-weight: 700;
   color: var(--black);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Barre violette avant les titres h4 dans les blocs parcours */
+.gc-atelier-text h4::before {
+  content: '';
+  width: 3px;
+  height: 18px;
+  background: var(--primary);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .gc-atelier-text p {
   font-size: 14px;
   line-height: 1.8;
   color: var(--text);
+}
+
+/* Chip-tag "rôle/usage" sous le h4 — Parcours */
+.gc-purpose-chip {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(110, 63, 243, 0.06);
+  border: 1px solid rgba(110, 63, 243, 0.15);
+  border-radius: var(--radius-pill);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 12px;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+  margin-top: 2px;
+}
+
+/* Items numérotés — Section ateliers */
+.gc-atelier-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.gc-atelier-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.gc-atelier-item-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary);
+  background: rgba(110, 63, 243, 0.08);
+  border: 1px solid rgba(110, 63, 243, 0.15);
+  border-radius: 6px;
+  padding: 3px 8px;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+.gc-atelier-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gc-atelier-item-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.gc-atelier-item-body p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Steps numérotés — Réalisation du questionnaire */
+.gc-realisation-intro {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.gc-realisation-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.gc-realisation-step-block {
+  padding: 18px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.gc-realisation-step-block:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.gc-realisation-step-block p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text);
+  margin-top: 6px;
+}
+
+/* Numéro de step inline dans le subtitle */
+.gc-realisation-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--primary);
+  background: rgba(110, 63, 243, 0.08);
+  border-radius: 5px;
+  letter-spacing: 0;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .gc-atelier-screenshot {
@@ -3270,8 +3728,8 @@ img {
   align-items: center;
   padding: 16px;
   gap: 24px;
-  background: #FAFAFA;
-  border: 1px solid #F2F2F2;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   flex: none;
   flex-grow: 0;
@@ -3302,30 +3760,32 @@ img {
 /* ========== APPLICATION MERCURE ========== */
 
 .mercure-title {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 48px;
-  line-height: 50px;
-  letter-spacing: -0.02em;
-  text-align: center;
+  font-size: clamp(24px, 3vw, 28px);
+  letter-spacing: -0.01em;
   color: var(--black);
   margin-bottom: 8px;
 }
 
 .mercure-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-style: italic;
-  text-align: center;
   color: var(--text-light);
-  margin-bottom: 48px;
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 .mercure-content {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
+}
+
+.interne-observatoire .mercure-title {
+  margin-bottom: 28px;
 }
 
 .mercure-cards {
@@ -3350,23 +3810,27 @@ img {
 }
 
 .mercure-card-header span {
-  font-size: 24px;
+  font-size: 22px;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .mercure-card-header h4 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 22px;
-  color: var(--text-dark);
+  font-size: 18px;
+  color: var(--black);
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .mercure-card p {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   line-height: 1.7;
-  color: var(--text-light);
+  color: var(--text);
   margin: 0;
 }
 
@@ -3389,8 +3853,8 @@ img {
 .observatoire-section-title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  color: var(--text-dark);
+  font-size: 18px;
+  color: var(--black);
   margin-bottom: 16px;
 }
 
@@ -3402,14 +3866,12 @@ img {
 }
 
 .observatoire-wireframe-title {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 48px;
-  line-height: 50px;
-  text-align: center;
+  font-size: clamp(24px, 3vw, 28px);
+  letter-spacing: -0.01em;
   color: var(--black);
-  margin-bottom: 32px;
-  letter-spacing: -0.02em;
+  margin-bottom: 24px;
 }
 
 .observatoire-wireframe-grid {
@@ -3422,7 +3884,7 @@ img {
 .internes-grid {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 128px;
 }
 
 .interne-project h3 {
@@ -3533,7 +3995,7 @@ img {
 .ui-project-name {
   font-family: var(--font-display);
   font-size: 56px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
@@ -3732,7 +4194,7 @@ img {
 
   .experience-card:nth-child(3),
   .experience-card:nth-child(4) {
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border);
   }
 
   .hero-word-primary,
@@ -3807,7 +4269,7 @@ img {
 
   .experience-card {
     border-right: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
     text-align: left;
   }
 
@@ -4167,7 +4629,7 @@ img {
 .iphone-dynamic-island {
   width: 38%;
   height: 11px;
-  background: #1D1D1F;
+  background: var(--black);
   border-radius: 20px;
   margin: 0 auto 8px;
 }
@@ -4197,8 +4659,23 @@ img {
 }
 
 @media (max-width: 768px) {
-  .garrice-iphone { display: none; }
-  .garrice-devices { padding-bottom: 0; margin-bottom: 48px; }
+  .garrice-devices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 40px;
+    padding-bottom: 0;
+  }
+  .garrice-macbook {
+    width: 100%;
+  }
+  .garrice-iphone {
+    display: block;
+    transform: none;
+    margin-bottom: 0;
+    width: clamp(130px, 42vw, 190px);
+  }
 }
 
 /* ===== VIDEO PLAYER CUSTOM CONTROLS ===== */
@@ -4331,7 +4808,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  margin-bottom: 80px;
+  margin-bottom: 128px;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -4627,7 +5104,7 @@ img {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  margin-bottom: 80px;
+  margin-bottom: 128px;
 }
 #garrice-role + .projet-intro-grid .contexte-block {
   border-radius: 0;
@@ -5205,6 +5682,27 @@ img {
   .garrice-parcours-arrow { width: 44px; height: 44px; }
   .garrice-parcours-prev { left: -4px; }
   .garrice-parcours-next { right: -4px; }
+  .garrice-parcours-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 52vh;
+    width: 100%;
+  }
+  .garrice-parcours-frame img {
+    width: auto;
+    max-width: 100%;
+    max-height: 52vh;
+    object-fit: contain;
+  }
+  .garrice-parcours-desc {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .garrice-parcours-step {
+    align-items: stretch;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5314,11 +5812,14 @@ img {
 
 @media (max-width: 480px) {
   .garrice-mc-cascade {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
   .garrice-mc-hero {
-    grid-column: 1;
+    grid-column: 1 / -1;
   }
+  .garrice-mc-col--mid { margin-top: 0; }
+  .garrice-mc-col--far { margin-top: 40px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5457,3 +5958,808 @@ img {
 .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.16s;  opacity: 1; transform: none; }
 .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.24s;  opacity: 1; transform: none; }
 .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.32s;  opacity: 1; transform: none; }
+
+/* ========== RESPONSIVE — VEOLIA GRILLES ========== */
+
+@media (max-width: 900px) {
+  .gc-methodo-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gc-deroulement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .etapes-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .etape {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gc-intro-grid {
+    grid-template-columns: 1fr;
+  }
+  .gc-methodo-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gc-methodo-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gc-deroulement-grid {
+    grid-template-columns: 1fr;
+  }
+  .am-etapes-grid {
+    grid-template-columns: 1fr;
+  }
+  .am-etape-card--full {
+    grid-column: 1;
+  }
+  .am-tests-deroulement {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mercure-content {
+    grid-template-columns: 1fr;
+  }
+  .gc-verbatims-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .gc-verbatims-title {
+    flex: none;
+    font-size: 24px;
+  }
+  .gc-verbatims-list {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .etapes-grid {
+    flex-wrap: wrap;
+  }
+  .etape {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .am-tests-deroulement {
+    grid-template-columns: 1fr;
+  }
+  .gc-methodo-steps,
+  .gc-methodo-3 {
+    grid-template-columns: 1fr;
+  }
+  .etape {
+    flex: 1 1 100%;
+  }
+  .portail-marques-grid {
+    flex-direction: column;
+  }
+  .portail-marque-img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .observatoire-atelier {
+    grid-template-columns: 1fr;
+  }
+  .observatoire-wireframe-grid {
+    grid-template-columns: 1fr;
+  }
+  .portail-marques-grid {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .portail-marque-img {
+    width: calc(50% - 8px);
+    margin-left: 0;
+    margin-top: 0 !important;
+    flex-shrink: 1;
+  }
+  .am-tests-section {
+    margin-top: 48px;
+  }
+}
+
+/* ========== REFONTE — GC ÉTUDE QUALITATIVE MÉTHODOLOGIE ========== */
+
+/* Grid 3 colonnes (layout 3+2) pour les 5 cartes méthodo */
+.gc-methodo-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Card méthodo individuelle */
+.gc-methodo-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.gc-methodo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(29,29,31,0.10), 0 2px 8px rgba(29,29,31,0.06);
+}
+
+/* Container icône violet — partagé avec gc-derou-card */
+.gc-methodo-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(110, 63, 243, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Titre de la card méthodo */
+.gc-methodo-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+/* Description de la card méthodo */
+.gc-methodo-card-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* === DÉROULEMENT — PANNEAU STAT UNIFIÉ === */
+/* Contraste visuel fort avec les gc-methodo-card :
+   blanc/élevé/cards individuelles vs gris/plat/panel unifié */
+.gc-derou-panel {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.8fr;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.gc-derou-col {
+  padding: 28px 28px 28px 24px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gc-derou-col:last-child {
+  border-right: none;
+}
+
+/* Eyebrow header — icône + label uppercase */
+.gc-derou-col-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+}
+
+.gc-derou-col-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+}
+
+/* Bloc stat (chiffre + label) */
+.gc-derou-stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gc-derou-big-stat {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.gc-derou-big-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Liste déroulement */
+.gc-derou-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gc-derou-list li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 14px;
+  position: relative;
+}
+
+.gc-derou-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* === GUIDE D'ENTRETIEN — callout violet === */
+.gc-guide-intro {
+  border-left: 3px solid var(--primary);
+  background: rgba(110, 63, 243, 0.03);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 20px 28px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gc-guide-intro p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* === RESPONSIVE — Méthodologie refonte === */
+@media (max-width: 960px) {
+  .gc-methodo-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gc-derou-panel {
+    grid-template-columns: 1fr;
+  }
+  .gc-derou-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .gc-derou-col:last-child {
+    border-bottom: none;
+  }
+  .gc-atelier-bottom {
+    flex-wrap: wrap;
+  }
+  .gc-atelier-photo-panel {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 600px) {
+  .gc-methodo-3col {
+    grid-template-columns: 1fr;
+  }
+  .gc-atelier-photo-panel {
+    flex: 1 1 100%;
+  }
+}
+
+
+/* ==================== RESPONSIVE GLOBAL — NAV + HOMEPAGE ==================== */
+
+/* ── Sub-nav header (desktop: hidden) ── */
+.sub-nav-header {
+  display: none;
+}
+
+/* ── Sub-nav dots indicator ── */
+.sub-nav-progressbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 16px 6px;
+  flex-shrink: 0;
+  min-height: 18px;
+}
+.sub-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C8C8D4;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.3s ease,
+              border-radius 0.3s ease;
+  flex-shrink: 0;
+}
+.sub-nav-dot.active {
+  background: var(--primary);
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* ── Nav brand (mobile only — hidden desktop) ── */
+.nav-brand {
+  display: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Hamburger button ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.nav-hamburger:hover {
+  background: var(--surface);
+}
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease-out), opacity 0.25s var(--ease-out);
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Breakpoint 768px ── */
+@media (max-width: 768px) {
+
+  /* --- Nav mobile --- */
+  .nav-progress {
+    display: none;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    padding: 0 16px;
+    position: relative;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 12px 16px;
+    z-index: 998;
+    animation: navSlideDown 0.25s var(--ease-out);
+  }
+  .nav-links.nav-open {
+    display: flex;
+  }
+  .nav-link {
+    font-size: 14px;
+    padding: 11px 14px;
+    white-space: normal;
+    border-radius: var(--radius-sm);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-link.active::after {
+    display: none;
+  }
+  .nav-link.active {
+    background: var(--surface);
+  }
+
+  /* --- Sub-nav : hauteur auto + label section --- */
+  :root {
+    --sub-nav-height: 70px;
+  }
+  .sub-nav {
+    height: auto;
+  }
+  .sub-nav-header {
+    display: flex;
+    align-items: center;
+    padding: 7px 14px 2px;
+  }
+  .sub-nav-section-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+  }
+
+  /* --- Sub-nav — scroll horizontal + fade indicateur --- */
+  .sub-nav.visible {
+    overflow: visible;
+  }
+  .sub-nav.visible::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 52px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.97));
+    pointer-events: none;
+    z-index: 10;
+  }
+  .sub-nav-inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 12px;
+    gap: 2px;
+    flex-wrap: nowrap;
+    height: 40px;
+  }
+  .sub-nav-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .sub-link {
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 6px 10px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* --- Logo page : suppression chevauchement --- */
+  .veolia-page-logo {
+    position: static;
+    display: block;
+    margin: 0 auto 16px;
+    height: 36px;
+  }
+  .nhco-page-logo {
+    height: 42px;
+  }
+
+  /* --- Subtitle tag : moins épais sur mobile --- */
+  .projet-page-subtitle {
+    font-weight: 500;
+    font-size: 10px;
+    padding: 4px 10px;
+    letter-spacing: 0.06em;
+    line-height: 1.45;
+  }
+
+  /* --- Hero --- */
+  .section-accueil {
+    padding-top: calc(var(--nav-height) + 24px);
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  .accueil-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .accueil-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 14px;
+  }
+  .accueil-info {
+    gap: 14px;
+  }
+  .contact-pill {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+  .accueil-contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .accueil-portfolio-label {
+    margin-top: 20px;
+  }
+
+  /* --- TIMELINE — layout vertical --- */
+  .section-formations {
+    min-height: auto;
+  }
+  .formations-wrap {
+    padding: 32px 20px 48px;
+  }
+  .tl-area {
+    position: relative;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 32px;
+    border-left: 2px solid var(--border);
+    overflow: visible;
+  }
+  .tl-line,
+  .tl-vline {
+    display: none;
+  }
+  .tl-item {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .tl-card {
+    position: static;
+    order: 1;
+  }
+  .tl-top .tl-card,
+  .tl-bottom .tl-card {
+    position: static;
+    top: auto;
+    bottom: auto;
+  }
+  .tl-dot {
+    position: absolute;
+    left: -38px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    transform: none;
+  }
+  .tl-year {
+    position: static;
+    display: block;
+    order: 0;
+    margin-bottom: 2px;
+    white-space: normal;
+    font-size: 11px;
+    left: auto;
+    bottom: auto;
+    top: auto;
+  }
+  .tl-year-up,
+  .tl-year-down {
+    top: auto;
+    bottom: auto;
+  }
+
+  /* --- Portfolio showcase --- */
+  .section-portfolio {
+    padding: 48px 0 72px;
+  }
+  .portfolio-wrap {
+    padding: 0 16px;
+  }
+  .portfolio-company {
+    padding: 20px 18px 18px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: 16px;
+  }
+  .portfolio-company-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .portfolio-company-logo {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+  .portfolio-projects-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .portfolio-projects-row--4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .portfolio-text-card--wide {
+    flex-direction: column;
+    padding: 16px 16px 36px;
+    min-height: 90px;
+    gap: 6px;
+  }
+
+  /* --- Project pages — général --- */
+  .contexte-main-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .gc-intro-grid {
+    grid-template-columns: 1fr;
+  }
+  .projet-page-desc {
+    font-size: 15px;
+  }
+}
+
+/* ── Breakpoint 480px ── */
+@media (max-width: 480px) {
+  .formations-wrap {
+    padding: 24px 14px 36px;
+  }
+  .portfolio-wrap {
+    padding: 0 12px;
+  }
+  .portfolio-company {
+    padding: 16px 14px 14px;
+  }
+  .portfolio-projects-row--4 {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-text-card {
+    padding: 14px 14px 32px;
+  }
+  .hero-word-primary,
+  .hero-word-secondary {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+  .contact-pill {
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .nav-hamburger span { transition: none; }
+  .nav-links { animation: none; }
+}
+
+
+/* ==================== RESPONSIVE — PAGES PROJETS (audit complet) ==================== */
+
+/* ── 900px : intermédiaire tablette ── */
+@media (max-width: 900px) {
+  /* App Mobile */
+  .am-tests-deroulement      { grid-template-columns: repeat(2, 1fr); }
+  .am-audit-grid             { grid-template-columns: repeat(2, 1fr); }
+  /* Grand Compte */
+  .gc-methodo-steps          { grid-template-columns: repeat(3, 1fr); }
+  /* Internes / Observatoire */
+  .mercure-content           { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .observatoire-atelier      { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ── 768px : mobile ── */
+@media (max-width: 768px) {
+
+  /* --- Nav brand visible --- */
+  .nav-brand { display: block; }
+
+  /* --- App Mobile --- */
+  .am-etapes-grid            { grid-template-columns: 1fr; }
+  .am-tests-cadrage-grid     { grid-template-columns: 1fr; gap: 16px; }
+  .am-tests-deroulement      { grid-template-columns: 1fr 1fr; }
+  .am-audit-grid             { grid-template-columns: 1fr 1fr; }
+
+  /* --- Portail consommateurs --- */
+  .portail-marques-grid      { flex-wrap: wrap; gap: 12px; padding-bottom: 32px; }
+  .portail-marque-img        { width: calc(50% - 6px); margin-left: 0 !important; }
+  .portail-marque-img--up,
+  .portail-marque-img--down  { margin-top: 0 !important; }
+
+  /* --- NHCO Back-office --- */
+  .nhco-bo-v1v2              { grid-template-columns: 1fr; gap: 16px; }
+  .nhco-bo-v1v2-arrow        { text-align: center; }
+
+  /* --- Grand Compte --- */
+  .gc-methodo-steps          { grid-template-columns: repeat(2, 1fr); }
+  .gc-deroulement-grid       { grid-template-columns: 1fr; }
+  .gc-realisation-block      { grid-template-columns: 1fr; gap: 32px; }
+  .gc-realisation-images     { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; height: auto; min-height: unset; overflow: visible; }
+  .gc-q-wrap                 { position: relative; width: 100% !important; left: auto !important; top: auto !important; margin-bottom: 0; }
+  .gc-q-wrap::after          { display: none; }
+  .gc-atelier-block          { grid-template-columns: 1fr; gap: 24px; }
+
+  /* --- Internes / Observatoire --- */
+  .mercure-content           { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .observatoire-atelier      { grid-template-columns: 1fr; gap: 24px; }
+  .observatoire-wireframe-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* --- NHCO XP — compléments ≤768px --- */
+  .nhco-xp-phase-grid        { grid-template-columns: 1fr; }
+  .nhco-xp-flow              { grid-template-columns: 1fr 1fr; }
+  .nhco-xp-profils-2x2       { grid-template-columns: 1fr; }
+  .nhco-xp-profils-labels    { grid-template-columns: 1fr; gap: 6px; }
+
+  /* --- Garrice — Rôle & Objectif ≤768px --- */
+  #garrice-role + .projet-intro-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 48px;
+  }
+  #garrice-role + .projet-intro-grid .contexte-block:nth-child(1) {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+  #garrice-role + .projet-intro-grid .garrice-role-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #garrice-role + .projet-intro-grid .garrice-role-list li {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-sm, 8px);
+  }
+
+  /* --- Veolia Grand Compte — Analyse qualitative ≤768px --- */
+  .gc-analyse-top          { flex-direction: column; gap: 20px; }
+  .gc-analyse-text         { flex: none; width: 100%; }
+  .gc-analyse-right-images { flex-direction: column; }
+  .gc-analyse-bottom-row   { flex-direction: column; }
+
+  /* --- Veolia Grand Compte — Ateliers ≤768px --- */
+  .gc-atelier-top          { flex-direction: column; gap: 20px; }
+  .gc-atelier-card-12      { width: 100%; box-sizing: border-box; }
+  .gc-atelier-card-12 img  { height: auto; max-height: 260px; }
+  .gc-atelier-bottom       { flex-direction: column; gap: 12px; }
+  .gc-atelier-photo-panel  { flex: none; width: 100%; }
+
+  /* --- Garrice — Rôle & Objectif ≤768px --- */
+  .projet-page-desc          { font-size: 15px; max-width: 100%; }
+  .projet-main-title         { font-size: 28px; text-align: center; }
+  .projet-veolia-title       { font-size: 36px; text-align: center; }
+  .veolia-header             { justify-content: center; }
+  .veolia-header-text        { text-align: center; width: 100%; }
+  .gc-header-titles          { margin-bottom: 24px; }
+}
+
+/* ── 480px : petit mobile ── */
+@media (max-width: 480px) {
+  .am-tests-deroulement      { grid-template-columns: 1fr; }
+  .am-audit-grid             { grid-template-columns: 1fr; }
+  .gc-methodo-steps          { grid-template-columns: 1fr; }
+  .portail-marque-img        { width: 100%; }
+  .nhco-xp-flow              { grid-template-columns: 1fr; }
+}
